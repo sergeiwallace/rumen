@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {
+      "id": "h-digest-provenance",
+      "sections": {"active_tool_updates": [{"title": "Loopback model", "summary": "The local endpoint is pinned to loopback.", "action": "Verify the local command.", "source": "https://fixture.invalid/loopback", "sources": ["https://fixture.invalid/loopback", "https://fixture.invalid/runtime"]}], "immediate_techniques": [], "horizon_developments": []}
+    }
+  ]
+}

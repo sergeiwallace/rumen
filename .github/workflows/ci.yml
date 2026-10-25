@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: uv sync --extra dev --extra taxonomy --extra feeds
+
+      - name: Lint
+        run: uv run ruff check src/ tests/
+
+      - name: Format check
+        run: uv run ruff format --check src/ tests/
+
+      - name: Test
+        run: uv run pytest
+      - name: Package build and install smoke test
+        env:
+          RUMEN_DB_DSN: "sqlite:///${{ runner.temp }}/rumen-package-smoke.db"
+        run: |
+          uv build --out-dir dist
+          uv venv --python 3.11 "$RUNNER_TEMP/rumen-package-smoke"
+          uv pip install --python "$RUNNER_TEMP/rumen-package-smoke/bin/python" dist/*.whl
+          "$RUNNER_TEMP/rumen-package-smoke/bin/rumen" --help

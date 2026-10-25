@@ -1,0 +1,8 @@
+# Pruned from the UN Thesaurus TTL download dated 2026-05-06:
+# https://unbis-thesaurus.s3.us-east-1.amazonaws.com/unbist-20260506.ttl
+@prefix unbis: <http://metadata.un.org/thesaurus/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+unbis:1004779 a skos:Concept ;
+    skos:prefLabel "PEACEKEEPING OPERATIONS"@en ;
+    skos:broader unbis:010300 .

@@ -1,0 +1,1 @@
+{"classifier_escalation_alarm_threshold": 0.25, "sources": [{"type": "github_repository", "repo": "example-owner/example-repository", "token_env": "EXAMPLE_GITHUB_TOKEN"}]}

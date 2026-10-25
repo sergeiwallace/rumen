@@ -1,0 +1,1 @@
+{"classifier_escalation_alarm_threshold": 0.25, "sources": [{"type": "youtube_playlist", "playlist_id": "CHANGE_ME_PUBLIC_PLAYLIST_ID", "api_key_env": "EXAMPLE_YOUTUBE_API_KEY", "max_api_units_per_run": 100, "metadata_refresh_days": 28, "transcript_mode": "off", "transcript_languages": [], "prefer_manual_transcript": true}]}

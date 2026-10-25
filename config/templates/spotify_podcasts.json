@@ -1,0 +1,1 @@
+{"classifier_escalation_alarm_threshold": 0.25, "sources": [{"type": "spotify_podcasts", "profile": "example", "db_path": "/tmp/CHANGE_ME-podcasts.db", "staleness_hours": 48}]}

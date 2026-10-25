@@ -1,0 +1,74 @@
+{
+  "format": "rumen.chrome_reading_list.offline_fixture_inventory.v1",
+  "fixture_origin": "synthetic-protobuf-records-only",
+  "live_leveldb_opened": false,
+  "supported_milestones": [120, 130, 140],
+  "fixtures": [
+    {
+      "milestone": 120,
+      "chromium_proto_sha256": "1dedb75d97e7964a37cde05306c41006edc532aa5629010b8b8fc85c3b7a3e01",
+      "source_ref": "120.0.6099.109",
+      "storage_variant": "default",
+      "records": [
+        {
+          "key": "reading_list-dt-https://example.invalid/na%C3%AFve?q=%E2%98%95#part",
+          "value_hex": "0a3368747470733a2f2f6578616d706c652e696e76616c69642f6e6125433325414676653f713d25453225393825393523706172741209436166c3a920e298951a3368747470733a2f2f6578616d706c652e696e76616c69642f6e6125433325414676653f713d254532253938253935237061727420c0848c81f1ba830328f1f789f0b2bd83033000980607",
+          "expected": {
+            "title": "Café ☕",
+            "status": "UNREAD",
+            "creation_time_us": 1704067200123456,
+            "update_time_us": 1704153600654321,
+            "unknown_field_hex": "980607"
+          }
+        }
+      ],
+      "deleted_urls": ["https://example.invalid/deleted-m120#gone"]
+    },
+    {
+      "milestone": 130,
+      "chromium_proto_sha256": "bb9ba92cd60203074adb118f9eb13e3ac54cd6e9de1403a1cb44e9df5071800c",
+      "source_ref": "130.0.6723.91",
+      "storage_variant": "default",
+      "records": [
+        {
+          "key": "reading_list-dt-https://example.invalid/%E6%9D%B1%E4%BA%AC?state=old#%E6%9B%B4%E6%96%B0",
+          "value_hex": "0a4768747470733a2f2f6578616d706c652e696e76616c69642f2545362539442542312545342542412541433f73746174653d6f6c6423254536253942254234254536253936254230120ce69bb4e696b0e6b888e381bf1a4768747470733a2f2f6578616d706c652e696e76616c69642f2545362539442542312545342542412541433f73746174653d6f6c64232545362539422542342545362539362542302080c0b1d09bd38a0328c0c496bfddd58a033001980607",
+          "expected": {
+            "title": "更新済み",
+            "status": "READ",
+            "creation_time_us": 1735689600000000,
+            "update_time_us": 1735776000123456,
+            "previous_update_time_us": 1735689600000000,
+            "unknown_field_hex": "980607"
+          }
+        },
+        {
+          "key": "reading_list-md-https://example.invalid/%E6%9D%B1%E4%BA%AC?state=old#%E6%9B%B4%E6%96%B0",
+          "value_hex": "08"
+        }
+      ],
+      "deleted_urls": ["https://example.invalid/deleted-m130#gone"]
+    },
+    {
+      "milestone": 140,
+      "chromium_proto_sha256": "bb9ba92cd60203074adb118f9eb13e3ac54cd6e9de1403a1cb44e9df5071800c",
+      "source_ref": "140.0.7339.80",
+      "storage_variant": "default",
+      "records": [
+        {
+          "key": "reading_list-dt-https://example.invalid/r%C3%A9sum%C3%A9?lang=ja#%E7%AB%A0",
+          "value_hex": "0a3a68747470733a2f2f6578616d706c652e696e76616c69642f7225433325413973756d2543332541393f6c616e673d6a6123254537254142254130121352c3a973756dc3a920e2809420e69db1e4baac1a3a68747470733a2f2f6578616d706c652e696e76616c69642f7225433325413973756d2543332541393f6c616e673d6a612325453725414225413020808081b184e991032888d48ea0c6eb91033002980607",
+          "expected": {
+            "title": "Résumé — 東京",
+            "status": "UNSEEN",
+            "creation_time_us": 1767225600000000,
+            "update_time_us": 1767312000789000,
+            "unknown_field_hex": "980607"
+          },
+          "corrupt_value_hex": "0a3a68747470733a2f2f6578616d706c652e696e76616c69642f7225433325413973756d2543332541393f6c616e673d6a6123254537254142254130121352c3a973756dc3a920e2809420e69db1e4baac1a3a68747470733a2f2f6578616d706c652e696e76616c69642f7225433325413973756d2543332541393f6c616e673d6a612325453725414225413020808081b184e991032888d48ea0c6eb910330029806"
+        }
+      ],
+      "deleted_urls": ["https://example.invalid/deleted-m140#gone"]
+    }
+  ]
+}

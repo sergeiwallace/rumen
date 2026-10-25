@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:podcast="https://podcastindex.org/namespace/1.0" version="2.0"><channel><title>Test Show</title>
+<item><title>Episode One</title><guid>guid-one</guid><link>https://publisher.example/one</link><pubDate>Fri, 01 Aug 2026 12:00:00 +0000</pubDate><enclosure url="https://publisher.example/audio-one.mp3" type="audio/mpeg"/><podcast:transcript url="https://publisher.example/one.vtt" type="text/vtt" language="en"/></item>
+<item><title>Ambiguous</title><guid>guid-two</guid><link>https://publisher.example/two</link><pubDate>Sat, 02 Aug 2026 12:00:00 +0000</pubDate></item>
+<item><title>Ambiguous</title><guid>guid-three</guid><link>https://publisher.example/three</link><pubDate>Sun, 03 Aug 2026 12:00:00 +0000</pubDate></item>
+</channel></rss>

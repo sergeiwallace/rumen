@@ -1,0 +1,11 @@
+{
+  "cases": [
+    {
+      "id": "t-tier2-1",
+      "title": "Run a compact local model",
+      "content": "An operator serves a compact model through a loopback runtime.",
+      "concepts_by_facet": {"topic": {"technology": [["technology"]], "local-llm": [["technology", "local-llm"]]}},
+      "expected": {"topic": {"concept_ids": ["local-llm"], "accepted_paths": [["technology", "local-llm"]]}}
+    }
+  ]
+}

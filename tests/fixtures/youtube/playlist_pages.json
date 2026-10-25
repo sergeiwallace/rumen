@@ -1,0 +1,22 @@
+{
+  "pages": {
+    "first": {
+      "items": [
+        {"id": "pli-1", "snippet": {"publishedAt": "2026-09-01T12:00:00Z", "title": "fallback one"}, "contentDetails": {"videoId": "video-1"}},
+        {"id": "pli-2", "snippet": {"publishedAt": "2026-09-01T12:00:00Z", "title": "fallback two"}, "contentDetails": {"videoId": "video-2"}}
+      ],
+      "nextPageToken": "page-2"
+    },
+    "page-2": {
+      "items": [
+        {"id": "pli-3", "snippet": {"publishedAt": "2026-09-02T12:00:00Z", "title": "unavailable fallback"}, "contentDetails": {"videoId": "video-3"}}
+      ]
+    }
+  },
+  "details": {
+    "items": [
+      {"id": "video-2", "snippet": {"title": "Video two", "description": "two description", "channelTitle": "Channel", "channelId": "channel-2", "publishedAt": "2026-01-01T00:00:00Z"}, "contentDetails": {"duration": "PT2M"}, "status": {"caption": "true"}},
+      {"id": "video-1", "snippet": {"title": "Video one", "description": "one description", "channelTitle": "Channel", "channelId": "channel-1", "publishedAt": "2026-01-02T00:00:00Z"}, "contentDetails": {"duration": "PT1M"}, "status": {"caption": "false"}}
+    ]
+  }
+}

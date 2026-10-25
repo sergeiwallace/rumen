@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {
+      "id": "t-digest-1",
+      "sections": {"active_tool_updates": [{"title": "Local runner", "summary": "A local runner is available.", "action": "Try it.", "source": "https://fixture.invalid/local", "sources": ["https://fixture.invalid/local"]}], "immediate_techniques": [], "horizon_developments": []}
+    }
+  ]
+}

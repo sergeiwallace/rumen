@@ -1,0 +1,1 @@
+{"classifier_escalation_alarm_threshold": 0.25, "sources": [{"type": "github_stars_list", "token_env": "EXAMPLE_GITHUB_TOKEN", "list_name": "Example List"}]}

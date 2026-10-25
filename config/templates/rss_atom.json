@@ -1,0 +1,1 @@
+{"classifier_escalation_alarm_threshold": 0.25, "sources": [{"type": "rss_atom", "profile": "example", "feed_url": "https://feeds.example.com/updates.xml", "min_poll_interval_seconds": 900}]}

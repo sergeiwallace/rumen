@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel><title>Fixture RSS</title><link>https://feed.example.org/</link><description>Test</description>
+    <item><guid isPermaLink="false">rss-guid-1</guid><title>RSS title</title><link>/items/one</link><pubDate>Tue, 02 Jan 2024 03:04:05 GMT</pubDate><description><![CDATA[<p>Useful <b>RSS</b> text<script>bad()</script></p>]]></description><category>news</category></item>
+    <item><guid>bad-entry</guid><link>https://feed.example.org/bad</link><pubDate>Tue, 02 Jan 2024 03:04:05 GMT</pubDate></item>
+  </channel>
+</rss>

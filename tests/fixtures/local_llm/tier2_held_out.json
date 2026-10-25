@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {
+      "id": "h-tier2-two-facets",
+      "title": "Evaluate a local inference deployment",
+      "content": "A team compares an Ollama model locally and records reproducible benchmark evidence.",
+      "concepts_by_facet": {
+        "topic": {"technology": [["technology"]], "local-llm": [["technology", "local-llm"]], "benchmarking": [["technology", "benchmarking"]]},
+        "capability": {"evaluation": [["capability", "evaluation"]], "inference": [["capability", "inference"]]}
+      },
+      "expected": {
+        "topic": {"concept_ids": ["local-llm", "benchmarking"], "accepted_paths": [["technology", "local-llm"], ["technology", "benchmarking"]]},
+        "capability": {"concept_ids": ["evaluation"], "accepted_paths": [["capability", "evaluation"]]}
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "fixture_set": "local-llm-benchmark-v1",
+  "created_at": "2026-07-19",
+  "files": {
+    "tier2_tuning.json": "1148b3596b040e6fa4ec00a68883d432b6e1d7e11f4fc82ad495a3f3dd4450e2",
+    "tier2_held_out.json": "e39bdecd9592b9e3141d263b981ac7a8b56035318cc8412ead42311f5ee6b469",
+    "digest_tuning.json": "c6260d67c96cd4ab88e48c281eef38935c1fff6a8181549e9fd9534e5887aa59",
+    "digest_held_out.json": "3353ffa06dc867b915da58f5e358b3d7c5e8cf09cd3ae8ca898c6d5102c85f19"
+  },
+  "splits": {
+    "tuning": ["tier2_tuning.json", "digest_tuning.json"],
+    "held_out": ["tier2_held_out.json", "digest_held_out.json"]
+  }
+}

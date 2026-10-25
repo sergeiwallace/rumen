@@ -1,0 +1,114 @@
+{
+  "hf_daily_papers_day_2020-01-01_gap.json": {
+    "kind": "synthetic",
+    "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "request_url": "https://huggingface.co/api/daily_papers",
+    "params": "date=2020-01-01&limit=100&p=0",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hf_daily_papers_day_2026-07-27_absent_optional.json": {
+    "kind": "synthetic",
+    "sha256": "e4555f19af6df42ae94b534c35ee9fcd73c36423edf798d14e8ebccd2533a4ee",
+    "request_url": "https://huggingface.co/api/daily_papers",
+    "params": "date=2026-07-27&limit=100&p=0",
+    "http_status": 200,
+    "headers_path": "hf_daily_papers_capture_link_headers.txt",
+    "headers_sha256": "582c0937ba33e79c1a2e775a04ae2dd100f5cae83d973ecb06ea568970b2a200",
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hf_daily_papers_day_2026-07-28_normal.json": {
+    "kind": "synthetic",
+    "sha256": "27ac2593511052097fc409e4e82152a835b0efdb45384691d481f0838c23117a",
+    "request_url": "https://huggingface.co/api/daily_papers",
+    "params": "date=2026-07-28&limit=100&p=0",
+    "http_status": 200,
+    "headers_path": "hf_daily_papers_capture_ratelimit_headers.txt",
+    "headers_sha256": "3a4101e2a72abab54e7032381fc6962b90ba57efe1336489b76be96775001f70",
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hf_daily_papers_day_probe_bare_default.json": {
+    "kind": "synthetic",
+    "sha256": "feb3f914c7ffb4e4ff95f886976f1de1d5a07e13df6dd2901b07a87fb2ea7969",
+    "request_url": "https://huggingface.co/api/daily_papers",
+    "params": "",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hf_daily_papers_day_probe_future_error.json": {
+    "kind": "synthetic",
+    "sha256": "e32e0f6614f9d345ff85a3b20df813bdc681f943232e68af1f070131992723a3",
+    "request_url": "https://huggingface.co/api/daily_papers",
+    "params": "date=2100-01-01&limit=100&p=0",
+    "http_status": 400,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hf_daily_papers_day_probe_limit101_error.json": {
+    "kind": "synthetic",
+    "sha256": "77fd731293784f22bece488df5671ebb9152f5eb81f421874906dedd89cc7876",
+    "request_url": "https://huggingface.co/api/daily_papers",
+    "params": "date=2026-07-28&limit=101&p=0",
+    "http_status": 400,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hf_daily_papers_day_probe_limit10_p0.json": {
+    "kind": "synthetic",
+    "sha256": "a8427ee4de6b336f84e582dc77222e2da89b6bc985dd7ee9fc3fddafdbb63222",
+    "request_url": "https://huggingface.co/api/daily_papers",
+    "params": "date=2026-07-28&limit=10&p=0",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hf_daily_papers_day_probe_limit10_p1.json": {
+    "kind": "synthetic",
+    "sha256": "16ad145ada5b6d663ced9f43305e91404b5475bc58a0de86e0d578a2d0ef6b13",
+    "request_url": "https://huggingface.co/api/daily_papers",
+    "params": "date=2026-07-28&limit=10&p=1",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hf_daily_papers_day_probe_malformed_error.json": {
+    "kind": "synthetic",
+    "sha256": "bd79131d60de0701663bfc047bea90e79fc68abcdfaefc1bbe8679c18fd4de2f",
+    "request_url": "https://huggingface.co/api/daily_papers",
+    "params": "date=not-a-date&limit=100&p=0",
+    "http_status": 400,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hf_daily_papers_day_full_page.json": {
+    "kind": "synthetic-derived",
+    "sha256": "aecb8e1b1a36981a427d8c95d8aa01d799560a90fa53db2e15432510c76f32da",
+    "derived_from": "hf_daily_papers_day_2026-07-28_normal.json",
+    "mutation": "entries reduced to the minimal required schema (paper.id/title/summary/submittedOnDailyAt/publishedAt/authors[0].name/upvotes + numComments), ids and titles deterministically rewritten to distinct synthetic values, duplicated to exactly 100 items (the limit boundary); optional keys stripped to keep the fixture under the repo's 500 KB large-file gate"
+  },
+  "hf_daily_papers_day_intra_page_repeat.json": {
+    "kind": "synthetic-derived",
+    "sha256": "cab567e90d5fb099ac6eab81a456726d665f9dc708ea1b50753a203883faf601",
+    "derived_from": "hf_daily_papers_day_2026-07-28_normal.json",
+    "mutation": "Duplicated the synthetic first entry within one per-day page."
+  },
+  "hf_daily_papers_day_mismatch.json": {
+    "kind": "synthetic-derived",
+    "sha256": "f3404b277cca70ce4d66ee75a68c3f0e2a8a3039c097904fc5d5abb1ec0d0e85",
+    "derived_from": "hf_daily_papers_day_2026-07-28_normal.json",
+    "mutation": "Changed the synthetic first entry's paper.submittedOnDailyAt date to 2026-07-27."
+  },
+  "hf_daily_papers_day_non_arxiv.json": {
+    "kind": "synthetic-derived",
+    "sha256": "12c5b722adfdb0475965f462c813cb8e1317ce78f3fd4eee7c574f3c8a90b268",
+    "derived_from": "hf_daily_papers_day_2026-07-28_normal.json",
+    "mutation": "Changed the synthetic first entry's paper.id to the non-arXiv value org/paper x."
+  },
+  "hf_daily_papers_day_schema_violation.json": {
+    "kind": "synthetic-derived",
+    "sha256": "6e963546d397dc25602cf4bab02a79bbd309cb6622d92c5660410030933bcf40",
+    "derived_from": "hf_daily_papers_day_2026-07-28_normal.json",
+    "mutation": "Changed the synthetic first entry's paper.title from a string to false."
+  },
+  "hf_daily_papers_day_second_day_transport_failure.json": {
+    "kind": "synthetic-derived",
+    "sha256": "d57d66ba462fa3ede4e33a6c95b316ec1dc7a6ed460ea141a81629ca572a9391",
+    "derived_from": "hf_daily_papers_day_2026-07-28_normal.json",
+    "mutation": "Minimal fixture descriptor for a fetcher that raises a transport error on the second day."
+  }
+}

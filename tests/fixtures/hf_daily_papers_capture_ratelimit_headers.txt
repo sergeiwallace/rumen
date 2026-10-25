@@ -1,0 +1,21 @@
+HTTP/2 200
+content-type: application/json; charset=utf-8
+content-length: 96676
+date: Wed, 29 Jul 2026 08:01:36 GMT
+etag: example-synthetic
+x-powered-by: huggingface-moon
+x-request-id: example-synthetic
+ratelimit: "api";r=492;t=112
+ratelimit-policy: "fixed window";"api";q=500;w=300
+cross-origin-opener-policy: same-origin
+referrer-policy: strict-origin-when-cross-origin
+access-control-max-age: 86400
+access-control-allow-origin: https://huggingface.co
+vary: Origin
+access-control-expose-headers: X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+link: <https://huggingface.co/api/daily_papers?date=2026-07-28&limit=10&p=1>; rel="next"
+x-cache: Miss from cloudfront
+via: example-synthetic
+x-amz-cf-pop: example-synthetic
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: example-synthetic

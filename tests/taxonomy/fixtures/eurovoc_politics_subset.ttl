@@ -1,0 +1,20 @@
+# Pruned from the live EuroVoc v4.24 SPARQL service on 2026-07-19:
+# https://publications.europa.eu/webapi/rdf/sparql
+# This deliberately keeps only the reviewed politics slice used by T-13 tests,
+# rather than committing the full EuroVoc distribution.
+@prefix ev: <http://eurovoc.europa.eu/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ev:4704 a skos:Concept ;
+    skos:prefLabel "politics"@en ;
+    skos:narrower ev:3237, ev:3517 ;
+    dcterms:source <https://op.europa.eu/en/web/eu-vocabularies/eurovoc> .
+ev:3237 a skos:Concept ;
+    skos:prefLabel "legislative-executive relations"@en ;
+    skos:broader ev:4704 ;
+    dcterms:source <https://op.europa.eu/en/web/eu-vocabularies/eurovoc> .
+ev:3517 a skos:Concept ;
+    skos:prefLabel "political responsibility"@en ;
+    skos:broader ev:4704 ;
+    dcterms:source <https://op.europa.eu/en/web/eu-vocabularies/eurovoc> .

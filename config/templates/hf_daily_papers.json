@@ -1,0 +1,1 @@
+{"classifier_escalation_alarm_threshold": 0.25, "sources": [{"type": "hf_daily_papers", "bootstrap_lookback_days": 7, "daily_recheck_days": 2}]}

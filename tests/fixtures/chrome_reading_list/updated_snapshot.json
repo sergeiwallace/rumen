@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "snapshot-20260903T040000Z",
+  "items": [
+    {
+      "url": "https://example.com/path?full=query%20value#fragment",
+      "title": "An updated title with café",
+      "hasBeenRead": true,
+      "creationTime": 1788404400123,
+      "lastUpdateTime": 1788404401456
+    }
+  ]
+}

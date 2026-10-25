@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>tag:github.com,2008:https://github.com/example-user-1/example-sdk/releases</id>
+  <title>Release notes from example-sdk</title>
+  <updated>2026-07-10T12:00:00Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/1/v0.30.0</id>
+    <updated>2026-07-10T12:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/example-user-1/example-sdk/releases/tag/v0.30.0"/>
+    <title>v0.30.0</title>
+    <content type="html">Adds streaming helpers and tool-runner support.</content>
+    <author><name>example-user-1</name></author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/1/v0.29.0</id>
+    <updated>2026-07-05T09:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/example-user-1/example-sdk/releases/tag/v0.29.0"/>
+    <title>v0.29.0</title>
+    <content type="html">Bug fixes and typing improvements.</content>
+    <author><name>example-user-1</name></author>
+  </entry>
+</feed>

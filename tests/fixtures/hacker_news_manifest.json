@@ -1,0 +1,92 @@
+{
+  "hacker_news_search_ask_hn.json": {
+    "kind": "synthetic",
+    "sha256": "97876e950e4a836299c11076233cc3328f7d2e62f730f4685254e39bce2fa657",
+    "request_url": "https://hn.algolia.com/api/v1/search_by_date",
+    "params": "tags=ask_hn&hitsPerPage=5&page=0",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hacker_news_search_dual_bounds.json": {
+    "kind": "synthetic",
+    "sha256": "c5f8d46448965d3de60efcd3a79025586e2fa248de6b0bde9b4f333510957c68",
+    "request_url": "https://hn.algolia.com/api/v1/search_by_date",
+    "params": "tags=story&numericFilters=created_at_i>1785054912,created_at_i<=1785224112&hitsPerPage=5&page=0",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hacker_news_search_dual_bounds_verified.json": {
+    "kind": "synthetic",
+    "sha256": "b5861d43980fbbaa77479dbea6bb5910e9ba34ffc7a598901d098ab22615b071",
+    "request_url": "https://hn.algolia.com/api/v1/search_by_date",
+    "params": "tags=story&numericFilters=created_at_i>1785134620,created_at_i<=1785141820&hitsPerPage=100&page=0",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hacker_news_search_global_volume.json": {
+    "kind": "synthetic",
+    "sha256": "e7f4409d558ae8d1e3d970616cdb9bb7e266c6c10a6e359f0c6b5304e6091619",
+    "request_url": "https://hn.algolia.com/api/v1/search_by_date",
+    "params": "tags=story&numericFilters=created_at_i>1785141312,created_at_i<=1785227712&hitsPerPage=1&page=0",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hacker_news_search_invalid_schema.json": {
+    "kind": "synthetic-derived",
+    "sha256": "8a5d9da246f1d04966788118a9db9995c54200eff0068a0e0c53ae30640ecbe4",
+    "derived_from": "hacker_news_search_story_page0.json",
+    "mutation": "Removed the required title field from its first hit."
+  },
+  "hacker_news_search_later_page_failure.json": {
+    "kind": "synthetic-derived",
+    "sha256": "a4f4b3fff88ef288d9bd05f6d08beb1315f006e9ef48f0a119857579c7ae7f13",
+    "derived_from": "hacker_news_search_story_page1.json",
+    "mutation": "Reduced to a page-zero baseline for a fetcher that raises a transport error on page one."
+  },
+  "hacker_news_search_nbpages_disagreement.json": {
+    "kind": "synthetic-derived",
+    "sha256": "61aba98ef40e6f770b0c7d98caa4ba9b70da1ce954cba6349c6c02442c390b92",
+    "derived_from": "hacker_news_search_story_page1.json",
+    "mutation": "Changed nbPages from the synthetic page-zero value to simulate an index mutation."
+  },
+  "hacker_news_search_over_cap.json": {
+    "kind": "synthetic",
+    "sha256": "a425affb5aff65499f4eeae3eb644d30f924364c692b38f0917d4e513a183a62",
+    "request_url": "https://hn.algolia.com/api/v1/search_by_date",
+    "params": "tags=story&hitsPerPage=100&page=12",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hacker_news_search_points_first.json": {
+    "kind": "synthetic",
+    "sha256": "a987347e3788274a2fbd34267eae3bca8c0247febf1cefad6eb0929b1105fd3a",
+    "request_url": "https://hn.algolia.com/api/v1/items/49080308",
+    "params": "",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hacker_news_search_points_second.json": {
+    "kind": "synthetic",
+    "sha256": "a987347e3788274a2fbd34267eae3bca8c0247febf1cefad6eb0929b1105fd3a",
+    "request_url": "https://hn.algolia.com/api/v1/items/49080308",
+    "params": "",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hacker_news_search_story_page0.json": {
+    "kind": "synthetic",
+    "sha256": "ed8352c11c3fd24d7f93ad96c54ddd5e6d5c8161280c414e035d654507119070",
+    "request_url": "https://hn.algolia.com/api/v1/search_by_date",
+    "params": "query=LLM&tags=story&numericFilters=created_at_i>1785141312,created_at_i<=1785227712&hitsPerPage=2&page=0",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  },
+  "hacker_news_search_story_page1.json": {
+    "kind": "synthetic",
+    "sha256": "b8f8d883011e7a9d4cd1b003cecd29ed79d94ba28463701df9f4cd940201b606",
+    "request_url": "https://hn.algolia.com/api/v1/search_by_date",
+    "params": "query=LLM&tags=story&numericFilters=created_at_i>1785141312,created_at_i<=1785227712&hitsPerPage=2&page=1",
+    "http_status": 200,
+    "construction": "Synthetic values preserving response schema and boundary cases."
+  }
+}

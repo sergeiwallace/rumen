@@ -1,0 +1,12 @@
+{
+  "_comment": "Copy this file to config.local.json, then add sources from config/templates/. All values in shipped templates are placeholders. Set database.dsn explicitly for local SQLite (sqlite:///rumen.db) or Postgres (postgresql://HOST:5432/rumen, with the database user and password added in standard URL form); RUMEN_DB_DSN takes precedence when both are set. SQLite is never an implicit fallback.",
+  "database": {
+    "dsn": "sqlite:///rumen.db"
+  },
+  "storage": {
+    "backend": "sqlalchemy"
+  },
+  "sources": [],
+  "backlog_mining_enabled": false,
+  "classifier_escalation_alarm_threshold": 0.25
+}

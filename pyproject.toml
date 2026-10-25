@@ -1,0 +1,107 @@
+[project]
+name = "rumen"
+version = "0.1.0"
+description = "Self-contained rumen engine — ingest, classify, keyword-tag, group, rank, and digest content feeds"
+requires-python = ">=3.11"
+license = "MIT"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "sqlalchemy>=2.0",
+    "alembic>=1.13",
+    "psycopg[binary]>=3.1",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+reddit = [
+    "praw>=8.0.3,<9",
+]
+feeds = [
+    "feedparser>=6.0.14,<7",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-xdist>=3.6",
+    "ruff==0.16.8",
+]
+# The real semantic embedding model (all-MiniLM-L6-v2, 384-dim). Heavy (torch) —
+# kept optional so the engine + OSS on-ramp install stay light; the zero-dep
+# HashingEmbeddingProvider is the default until this is installed + configured.
+embeddings = [
+    "sentence-transformers>=3.0",
+]
+# Standards-native SKOS/RDF taxonomy authoring, validation, and database materialization
+# (D-24). Kept optional so the base engine + OSS on-ramp remain light; install with
+# `pip install rumen[taxonomy]` when authoring or loading a taxonomy.
+taxonomy = [
+    "rdflib>=7.0",
+    "skosify>=2.3",
+]
+# Confident-learning quality gate for fitting the optional per-facet hierarchical
+# classifiers (T-17).  Kept opt-in so the base engine and OSS on-ramp remain light;
+# install with `pip install rumen[hmc-fit]` when fitting HMC artifacts.
+hmc-fit = [
+    "cleanlab>=2.6",
+]
+# Local-LLM path (design D-20). Discoverability marker only — it deliberately pulls NO
+# Python deps: a local LLM (Ollama/MLX) is a *system binary* that Rumen invokes through the
+# config `llm_command` / `llm_commands` subprocess seam (point it at e.g.
+# ["ollama", "run", "llama3.1"]), so there is nothing to pip-install. `pip install
+# rumen[local-llm]` therefore just documents the supported install target and
+# signals the seam; install the Ollama runtime separately (e.g. `brew install ollama`).
+# Enables the quota-free Tier-2 tier (D-3 ladder) + the optional abstractive digest polish
+# (D-21 step 3) with no hosted-LLM dependency.
+local-llm = []
+# Optional and explicitly opt-in caption enrichment.  The official playlist discovery
+# path has no dependency on this undocumented provider boundary.
+youtube-transcripts = [
+    "youtube-transcript-api==1.2.4",
+]
+
+[project.scripts]
+rumen = "rumen.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rumen"]
+
+[tool.uv]
+# greenlet 3.5.4 shipped without Linux wheels or an sdist (transient PyPI packaging gap,
+# checked 2026-07-22: 3.5.3 and earlier all have Linux wheels). greenlet isn't a direct
+# dependency; it is transitively pulled in by the embeddings/taxonomy extras
+# — so uv sync --extra embeddings otherwise fails to resolve on Linux hosts.
+constraint-dependencies = ["greenlet!=3.5.4"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# Keep the former fleet baseline locally so standalone checks do not inherit a
+# contributor's user-level Ruff rule selection.
+select = ["E4", "E7", "E9", "F", "I"]
+extend-select = ["T201"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/rumen/cli.py" = ["T201"]
+"scripts/ops/spotify_podcast_sync.py" = ["T201"]
+# pytest.importorskip() guards must precede the imports it protects.
+"tests/taxonomy/*.py" = ["E402"]
+# sys.path.insert(SRC_ROOT) must precede the src-layout import it enables.
+"scripts/generate_schema_reference.py" = ["E402"]
+"scripts/_check_db_reachable.py" = ["E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+markers = [
+    "postgres: tests that require a reachable Postgres (RUMEN_TEST_PG_DSN set)",
+]

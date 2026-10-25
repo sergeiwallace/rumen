@@ -1,0 +1,2179 @@
+[
+  {
+    "paper": {
+      "id": "org/paper x",
+      "authors": [
+        {
+          "_id": "example-id-165",
+          "name": "Example Author 164",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-166",
+          "name": "Example Author 165",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-167",
+          "name": "Example Author 166",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-168",
+          "name": "Example Author 167",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-169",
+          "name": "Example Author 168",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-170",
+          "name": "Example Author 169",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-171",
+          "name": "Example Author 170",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-172",
+          "name": "Example Author 171",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-173",
+          "name": "Example Author 172",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-174",
+          "name": "Example Author 173",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-175",
+          "name": "Example Author 174",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-176",
+          "name": "Example Author 175",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-177",
+          "name": "Example Author 176",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-178",
+          "name": "Example Author 177",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-179",
+          "name": "Example Author 178",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-180",
+          "name": "Example Author 179",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-181",
+          "name": "Example Author 180",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-182",
+          "name": "Example Author 181",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-183",
+          "name": "Example Author 182",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-184",
+          "name": "Example Author 183",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-185",
+          "name": "Example Author 184",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-186",
+          "name": "Example Author 185",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-187",
+          "name": "Example Author 186",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-188",
+          "name": "Example Author 187",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-189",
+          "name": "Example Author 188",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-190",
+          "name": "Example Author 189",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-191",
+          "name": "Example Author 190",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-192",
+          "name": "Example Author 191",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-193",
+          "name": "Example Author 192",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-194",
+          "name": "Example Author 193",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-195",
+          "name": "Example Author 194",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-196",
+          "name": "Example Author 195",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-197",
+          "name": "Example Author 196",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-198",
+          "name": "Example Author 197",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-199",
+          "name": "Example Author 198",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-200",
+          "name": "Example Author 199",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-201",
+          "name": "Example Author 200",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-202",
+          "user": {
+            "_id": "example-id-203",
+            "avatarUrl": "https://example.com/url/78",
+            "isPro": false,
+            "fullname": "Example Author 201",
+            "user": "example-user-19",
+            "type": "user",
+            "name": "Example Author 202"
+          },
+          "name": "Example Author 201",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T08:45:04.598Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-204",
+          "name": "Example Author 203",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-205",
+          "name": "Example Author 204",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-206",
+          "name": "Example Author 205",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-207",
+          "name": "Example Author 206",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-208",
+          "name": "Example Author 207",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-209",
+          "name": "Example Author 208",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-210",
+          "name": "Example Author 209",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-211",
+          "name": "Example Author 210",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-212",
+          "name": "Example Author 211",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-213",
+          "name": "Example Author 212",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-214",
+          "name": "Example Author 213",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-215",
+          "name": "Example Author 214",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-216",
+          "name": "Example Author 215",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-217",
+          "name": "Example Author 216",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-218",
+          "name": "Example Author 217",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-219",
+          "name": "Example Author 218",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-220",
+          "name": "Example Author 219",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-221",
+          "name": "Example Author 220",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-222",
+          "name": "Example Author 221",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-223",
+          "name": "Example Author 222",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-224",
+          "name": "Example Author 223",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-225",
+          "name": "Example Author 224",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-226",
+          "name": "Example Author 225",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-227",
+          "name": "Example Author 226",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-228",
+          "name": "Example Author 227",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-229",
+          "name": "Example Author 228",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-230",
+          "name": "Example Author 229",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-231",
+          "name": "Example Author 230",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-232",
+          "name": "Example Author 231",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-233",
+          "name": "Example Author 232",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-234",
+          "name": "Example Author 233",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-235",
+          "name": "Example Author 234",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-236",
+          "name": "Example Author 235",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-237",
+          "name": "Example Author 236",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-238",
+          "name": "Example Author 237",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-239",
+          "name": "Example Author 238",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-240",
+          "name": "Example Author 239",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-241",
+          "name": "Example Author 240",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-242",
+          "name": "Example Author 241",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-243",
+          "name": "Example Author 242",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-244",
+          "user": {
+            "_id": "example-id-245",
+            "avatarUrl": "https://example.com/url/79",
+            "isPro": false,
+            "fullname": "Example Author 243",
+            "user": "example-user-20",
+            "type": "user",
+            "name": "Example Author 244"
+          },
+          "name": "Example Author 245",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T08:58:06.831Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-246",
+          "name": "Example Author 246",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-247",
+          "name": "Example Author 247",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-248",
+          "name": "Example Author 248",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-249",
+          "name": "Example Author 249",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-250",
+          "name": "Example Author 250",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-251",
+          "name": "Example Author 251",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-252",
+          "name": "Example Author 252",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-253",
+          "name": "Example Author 253",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-254",
+          "name": "Example Author 254",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-255",
+          "name": "Example Author 255",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-256",
+          "name": "Example Author 256",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-257",
+          "name": "Example Author 257",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-258",
+          "name": "Example Author 258",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-259",
+          "name": "Example Author 259",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-260",
+          "name": "Example Author 260",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-261",
+          "name": "Example Author 261",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-262",
+          "name": "Example Author 262",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-263",
+          "name": "Example Author 263",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-264",
+          "name": "Example Author 264",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-265",
+          "name": "Example Author 265",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-266",
+          "name": "Example Author 266",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-267",
+          "name": "Example Author 267",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-268",
+          "name": "Example Author 268",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-269",
+          "name": "Example Author 269",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-270",
+          "name": "Example Author 270",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-271",
+          "name": "Example Author 271",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-272",
+          "name": "Example Author 272",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-273",
+          "name": "Example Author 273",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-274",
+          "name": "Example Author 274",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-275",
+          "name": "Example Author 275",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-276",
+          "name": "Example Author 276",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-277",
+          "name": "Example Author 277",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-278",
+          "name": "Example Author 278",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-279",
+          "name": "Example Author 279",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-280",
+          "name": "Example Author 280",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-281",
+          "name": "Example Author 281",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-282",
+          "name": "Example Author 282",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-283",
+          "name": "Example Author 283",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-284",
+          "name": "Example Author 284",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-285",
+          "name": "Example Author 285",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-286",
+          "name": "Example Author 286",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-287",
+          "name": "Example Author 287",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-288",
+          "name": "Example Author 288",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-289",
+          "name": "Example Author 289",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-290",
+          "name": "Example Author 290",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-291",
+          "name": "Example Author 291",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-292",
+          "name": "Example Author 292",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-293",
+          "name": "Example Author 293",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-294",
+          "name": "Example Author 294",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-295",
+          "name": "Example Author 295",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-296",
+          "name": "Example Author 296",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-297",
+          "name": "Example Author 297",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-298",
+          "name": "Example Author 298",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-299",
+          "name": "Example Author 299",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-300",
+          "name": "Example Author 300",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-301",
+          "name": "Example Author 301",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-302",
+          "name": "Example Author 302",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-303",
+          "name": "Example Author 303",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-304",
+          "name": "Example Author 304",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-305",
+          "name": "Example Author 4",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-306",
+          "name": "Example Author 305",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-307",
+          "name": "Example Author 306",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-308",
+          "name": "Example Author 307",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-309",
+          "name": "Example Author 308",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-310",
+          "name": "Example Author 309",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-311",
+          "name": "Example Author 310",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-312",
+          "name": "Example Author 311",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-313",
+          "user": {
+            "_id": "example-id-314",
+            "avatarUrl": "https://example.com/url/80",
+            "isPro": false,
+            "fullname": "Example Author 312",
+            "user": "example-user-21",
+            "type": "user",
+            "name": "Example Author 313"
+          },
+          "name": "Example Author 312",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T08:45:04.624Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-315",
+          "name": "Example Author 314",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-316",
+          "name": "Example Author 315",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-317",
+          "name": "Example Author 316",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-318",
+          "name": "Example Author 317",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-319",
+          "name": "Example Author 318",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-320",
+          "name": "Example Author 319",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-321",
+          "name": "Example Author 320",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-322",
+          "name": "Example Author 321",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-323",
+          "name": "Example Author 322",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-324",
+          "name": "Example Author 323",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-325",
+          "name": "Example Author 324",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-326",
+          "name": "Example Author 325",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-327",
+          "name": "Example Author 326",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-328",
+          "name": "Example Author 327",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-329",
+          "name": "Example Author 328",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-330",
+          "name": "Example Author 329",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-331",
+          "user": {
+            "_id": "example-id-332",
+            "avatarUrl": "https://example.com/url/81",
+            "isPro": false,
+            "fullname": "Example Author 330",
+            "user": "example-user-22",
+            "type": "user",
+            "name": "Example Author 331"
+          },
+          "name": "Example Author 332",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T08:58:09.894Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-333",
+          "user": {
+            "_id": "example-id-334",
+            "avatarUrl": "https://example.com/url/82",
+            "isPro": false,
+            "fullname": "Example Author 333",
+            "user": "example-user-23",
+            "type": "user",
+            "name": "Example Author 334"
+          },
+          "name": "Example Author 333",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T08:45:04.605Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-335",
+          "name": "Example Author 335",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-336",
+          "name": "Example Author 336",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-337",
+          "user": {
+            "_id": "example-id-338",
+            "avatarUrl": "https://example.com/url/83",
+            "isPro": false,
+            "fullname": "Example Author 337",
+            "user": "example-user-24",
+            "type": "user",
+            "name": "Example Author 338"
+          },
+          "name": "Example Author 337",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T08:45:04.611Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-339",
+          "name": "Example Author 339",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-340",
+          "name": "Example Author 340",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-341",
+          "name": "Example Author 341",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-342",
+          "name": "Example Author 342",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-343",
+          "name": "Example Author 343",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-344",
+          "name": "Example Author 344",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-345",
+          "name": "Example Author 345",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-346",
+          "name": "Example Author 346",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-347",
+          "name": "Example Author 347",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-348",
+          "name": "Example Author 348",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-349",
+          "name": "Example Author 349",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-350",
+          "name": "Example Author 350",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-351",
+          "name": "Example Author 351",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-352",
+          "name": "Example Author 352",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-353",
+          "name": "Example Author 353",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-354",
+          "name": "Example Author 354",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-355",
+          "name": "Example Author 355",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-356",
+          "name": "Example Author 356",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-357",
+          "name": "Example Author 357",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-358",
+          "name": "Example Author 358",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-359",
+          "name": "Example Author 359",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-360",
+          "name": "Example Author 360",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-361",
+          "name": "Example Author 361",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-362",
+          "name": "Example Author 362",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-363",
+          "name": "Example Author 363",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-364",
+          "name": "Example Author 364",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-365",
+          "name": "Example Author 365",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-366",
+          "user": {
+            "_id": "example-id-367",
+            "avatarUrl": "https://example.com/url/84",
+            "isPro": false,
+            "fullname": "Example Author 366",
+            "user": "example-user-25",
+            "type": "user",
+            "name": "Example Author 367"
+          },
+          "name": "Example Author 366",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T08:45:04.618Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-368",
+          "name": "Example Author 368",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-369",
+          "name": "Example Author 369",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-370",
+          "name": "Example Author 370",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-371",
+          "name": "Example Author 371",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-372",
+          "name": "Example Author 372",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-373",
+          "name": "Example Author 373",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-374",
+          "name": "Example Author 374",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-375",
+          "name": "Example Author 375",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-376",
+          "name": "Example Author 376",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-377",
+          "name": "Example Author 377",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-378",
+          "name": "Example Author 378",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-379",
+          "name": "Example Author 379",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-380",
+          "name": "Example Author 380",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-381",
+          "name": "Example Author 381",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-382",
+          "name": "Example Author 382",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-383",
+          "name": "Example Author 383",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-384",
+          "name": "Example Author 384",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-385",
+          "name": "Example Author 385",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-386",
+          "name": "Example Author 386",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-387",
+          "name": "Example Author 387",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-388",
+          "name": "Example Author 388",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-389",
+          "name": "Example Author 389",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-390",
+          "name": "Example Author 390",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-391",
+          "name": "Example Author 391",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-392",
+          "name": "Example Author 391",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-393",
+          "name": "Example Author 392",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-394",
+          "name": "Example Author 393",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-395",
+          "name": "Example Author 394",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-396",
+          "name": "Example Author 395",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-397",
+          "name": "Example Author 396",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-398",
+          "name": "Example Author 397",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-399",
+          "name": "Example Author 398",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-400",
+          "user": {
+            "_id": "example-id-401",
+            "avatarUrl": "https://example.com/url/85",
+            "isPro": false,
+            "fullname": "Example Author 399",
+            "user": "example-user-26",
+            "type": "user",
+            "name": "Example Author 400"
+          },
+          "name": "Example Author 401",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T08:58:12.154Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-402",
+          "name": "Example Author 402",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-403",
+          "name": "Example Author 403",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-404",
+          "name": "Example Author 404",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-405",
+          "name": "Example Author 405",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-406",
+          "name": "Example Author 406",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-407",
+          "name": "Example Author 407",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-408",
+          "name": "Example Author 408",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-409",
+          "name": "Example Author 409",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-410",
+          "name": "Example Author 410",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-411",
+          "name": "Example Author 411",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-412",
+          "name": "Example Author 412",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-413",
+          "name": "Example Author 413",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-414",
+          "name": "Example Author 414",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-415",
+          "name": "Example Author 415",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-416",
+          "name": "Example Author 416",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-417",
+          "name": "Example Author 417",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-418",
+          "name": "Example Author 418",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-419",
+          "name": "Example Author 419",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-420",
+          "name": "Example Author 420",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-421",
+          "name": "Example Author 421",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-422",
+          "name": "Example Author 422",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-423",
+          "name": "Example Author 423",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-424",
+          "name": "Example Author 424",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-425",
+          "name": "Example Author 425",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-426",
+          "name": "Example Author 426",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-427",
+          "name": "Example Author 427",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-428",
+          "name": "Example Author 428",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-429",
+          "name": "Example Author 429",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-430",
+          "name": "Example Author 430",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-431",
+          "name": "Example Author 431",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-432",
+          "name": "Example Author 432",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-433",
+          "name": "Example Author 433",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-434",
+          "name": "Example Author 434",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-435",
+          "name": "Example Author 435",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-436",
+          "name": "Example Author 436",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-437",
+          "name": "Example Author 437",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-438",
+          "name": "Example Author 438",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-439",
+          "name": "Example Author 439",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-440",
+          "name": "Example Author 440",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-441",
+          "name": "Example Author 441",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-442",
+          "name": "Example Author 442",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-443",
+          "name": "Example Author 443",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-444",
+          "name": "Example Author 444",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-445",
+          "name": "Example Author 445",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-446",
+          "name": "Example Author 446",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-447",
+          "name": "Example Author 447",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-448",
+          "name": "Example Author 448",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-449",
+          "name": "Example Author 449",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-450",
+          "name": "Example Author 450",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-451",
+          "name": "Example Author 451",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-452",
+          "name": "Example Author 452",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-453",
+          "name": "Example Author 453",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-454",
+          "name": "Example Author 454",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-455",
+          "name": "Example Author 455",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-456",
+          "name": "Example Author 456",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-457",
+          "name": "Example Author 457",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-458",
+          "name": "Example Author 458",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-459",
+          "name": "Example Author 459",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-460",
+          "name": "Example Author 460",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-461",
+          "name": "Example Author 461",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-462",
+          "name": "Example Author 462",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-463",
+          "name": "Example Author 463",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-464",
+          "name": "Example Author 464",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-465",
+          "name": "Example Author 465",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-466",
+          "name": "Example Author 466",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-467",
+          "name": "Example Author 467",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-468",
+          "name": "Example Author 468",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-469",
+          "name": "Example Author 469",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-470",
+          "name": "Example Author 470",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-471",
+          "name": "Example Author 471",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-472",
+          "name": "Example Author 472",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-473",
+          "name": "Example Author 473",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-474",
+          "name": "Example Author 474",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-475",
+          "name": "Example Author 475",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-476",
+          "name": "Example Author 476",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-477",
+          "name": "Example Author 477",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-478",
+          "name": "Example Author 478",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-479",
+          "name": "Example Author 479",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-480",
+          "name": "Example Author 480",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-481",
+          "name": "Example Author 481",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-482",
+          "name": "Example Author 482",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-483",
+          "name": "Example Author 483",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-484",
+          "name": "Example Author 484",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-485",
+          "name": "Example Author 485",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-486",
+          "name": "Example Author 486",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-487",
+          "name": "Example Author 487",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-488",
+          "name": "Example Author 488",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-489",
+          "name": "Example Author 489",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-490",
+          "name": "Example Author 490",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-491",
+          "name": "Example Author 491",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-492",
+          "name": "Example Author 492",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-493",
+          "name": "Example Author 493",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-494",
+          "name": "Example Author 494",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-495",
+          "name": "Example Author 495",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-496",
+          "name": "Example Author 496",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-497",
+          "name": "Example Author 497",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-498",
+          "name": "Example Author 498",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-499",
+          "name": "Example Author 499",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-500",
+          "name": "Example Author 500",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-501",
+          "name": "Example Author 501",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-502",
+          "name": "Example Author 502",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-503",
+          "name": "Example Author 503",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-504",
+          "name": "Example Author 504",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-505",
+          "name": "Example Author 505",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-506",
+          "name": "Example Author 506",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-507",
+          "name": "Example Author 507",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-508",
+          "name": "Example Author 508",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-509",
+          "name": "Example Author 509",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-510",
+          "name": "Example Author 510",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-511",
+          "name": "Example Author 511",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-512",
+          "name": "Example Author 37",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-513",
+          "name": "Example Author 512",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-514",
+          "name": "Example Author 513",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-515",
+          "name": "Example Author 514",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-516",
+          "name": "Example Author 515",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-517",
+          "name": "Example Author 516",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-518",
+          "name": "Example Author 517",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-519",
+          "name": "Example Author 518",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-520",
+          "name": "Example Author 519",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-521",
+          "name": "Example Author 520",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-522",
+          "name": "Example Author 521",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-523",
+          "name": "Example Author 522",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-524",
+          "name": "Example Author 523",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-525",
+          "name": "Example Author 524",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-526",
+          "name": "Example Author 525",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-527",
+          "name": "Example Author 526",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-528",
+          "name": "Example Author 527",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-529",
+          "name": "Example Author 528",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-530",
+          "name": "Example Author 529",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-531",
+          "name": "Example Author 530",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-532",
+          "name": "Example Author 531",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-533",
+          "name": "Example Author 532",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-534",
+          "name": "Example Author 533",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-535",
+          "user": {
+            "_id": "example-id-536",
+            "avatarUrl": "https://example.com/url/86",
+            "isPro": false,
+            "fullname": "Example Author 534",
+            "user": "example-user-27",
+            "type": "user",
+            "name": "Example Author 535"
+          },
+          "name": "Example Author 534",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T16:45:04.639Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-537",
+          "name": "Example Author 536",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-538",
+          "name": "Example Author 537",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-539",
+          "name": "Example Author 538",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-540",
+          "name": "Example Author 539",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-541",
+          "name": "Example Author 540",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-542",
+          "name": "Example Author 541",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-543",
+          "name": "Example Author 542",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-544",
+          "name": "Example Author 543",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-545",
+          "name": "Example Author 544",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-546",
+          "name": "Example Author 545",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-547",
+          "name": "Example Author 546",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-548",
+          "name": "Example Author 547",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-549",
+          "name": "Example Author 548",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-550",
+          "name": "Example Author 549",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-551",
+          "name": "Example Author 550",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-552",
+          "name": "Example Author 551",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-553",
+          "name": "Example Author 552",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-554",
+          "name": "Example Author 553",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-555",
+          "name": "Example Author 554",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-556",
+          "name": "Example Author 555",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-557",
+          "name": "Example Author 556",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-558",
+          "name": "Example Author 557",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-559",
+          "user": {
+            "_id": "example-id-560",
+            "avatarUrl": "https://example.com/url/87",
+            "isPro": false,
+            "fullname": "Example Author 558",
+            "user": "example-user-28",
+            "type": "user",
+            "name": "Example Author 559"
+          },
+          "name": "Example Author 558",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-28T16:45:04.647Z",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-561",
+          "name": "Example Author 560",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-562",
+          "name": "Example Author 561",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-563",
+          "name": "Example Author 562",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-564",
+          "name": "Example Author 563",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-565",
+          "name": "Example Author 564",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-566",
+          "name": "Example Author 565",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-567",
+          "name": "Example Author 566",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-568",
+          "name": "Example Author 567",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-569",
+          "name": "Example Author 568",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-570",
+          "name": "Example Author 569",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-571",
+          "name": "Example Author 570",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-572",
+          "name": "Example Author 571",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-573",
+          "name": "Example Author 572",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-574",
+          "name": "Example Author 573",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-575",
+          "name": "Example Author 574",
+          "hidden": false
+        },
+        {
+          "_id": "example-id-576",
+          "name": "Example Author 575",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-27T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-28T00:00:00.000Z",
+      "title": "Example title 149",
+      "submittedOnDailyBy": {
+        "_id": "example-id-32",
+        "avatarUrl": "https://example.com/url/7",
+        "isPro": true,
+        "fullname": "Example Author 32",
+        "user": "example-user-3",
+        "type": "user",
+        "name": "Example Author 32"
+      },
+      "summary": "Example summary 18",
+      "upvotes": 299,
+      "discussionId": "example-id-577",
+      "projectPage": "https://example.com/url/88",
+      "githubRepo": "https://example.com/url/89",
+      "githubRepoAddedBy": "admin",
+      "githubStars": 3654,
+      "organization": {
+        "_id": "example-id-578",
+        "name": "Example Author 576",
+        "fullname": "Example Author 577",
+        "avatar": "https://example.com/url/90"
+      }
+    },
+    "publishedAt": "2026-07-26T20:00:00.000Z",
+    "title": "Example title 18",
+    "summary": "Example summary 18",
+    "thumbnail": "https://example.com/url/91",
+    "numComments": 5,
+    "submittedBy": {
+      "_id": "example-id-32",
+      "avatarUrl": "https://example.com/url/7",
+      "fullname": "Example Author 32",
+      "name": "Example Author 32",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 349,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "example-id-578",
+      "name": "Example Author 576",
+      "fullname": "Example Author 577",
+      "avatar": "https://example.com/url/90"
+    },
+    "isAuthorParticipating": false
+  }
+]

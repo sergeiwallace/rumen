@@ -1,0 +1,1 @@
+{"classifier_escalation_alarm_threshold": 0.25, "sources": [{"type": "reddit_saved", "db_path": "data/CHANGE_ME-reddit-saved.db", "staleness_hours": 48}]}
