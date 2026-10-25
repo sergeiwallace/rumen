@@ -27,7 +27,7 @@ feeds = [
 dev = [
     "pytest>=8.0",
     "pytest-xdist>=3.6",
-    "ruff==0.16.8",
+    "ruff==0.17.1",
 ]
 # The real semantic embedding model (all-MiniLM-L6-v2, 384-dim). Heavy (torch) —
 # kept optional so the engine + OSS on-ramp install stay light; the zero-dep
