@@ -74,6 +74,8 @@ class YouTubeTranscriptApiProvider:
                     )
                 )
             return tracks
+        except (TranscriptNotFoundError, TranscriptTransientError, TranscriptBlockedError):
+            raise
         except Exception as exc:  # package exception taxonomy is intentionally unstable
             name = type(exc).__name__.lower()
             if "notranscript" in name or "transcriptsdisabled" in name:

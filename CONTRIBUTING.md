@@ -48,9 +48,7 @@ change with regression coverage, and open a pull request against protected
 `main`. Describe the behavior changed, how it was tested, and any configuration
 or migration impact. Maintainers merge only after required checks pass.
 
-Hosted branch-protection enforcement is configured as a publication-time action;
-this repository prepares the workflow and contribution contract but does not
-claim that hosted enforcement is already active.
+The `main` branch is protected on the public repository.
 
 ## Public/private boundary
 

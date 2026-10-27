@@ -197,3 +197,69 @@ def test_given_real_provider_error_when_wrapped_then_preserves_error_classificat
     monkeypatch.setattr(api.YouTubeTranscriptApi, "list", fail)
     with pytest.raises(expected, match=f"^{code}$"):
         list(YouTubeTranscriptApiProvider().list_tracks("video-1"))
+
+
+@pytest.fixture(params=[False, True], ids=["manual", "generated"])
+def empty_caption_provider(monkeypatch, request):
+    api = pytest.importorskip("youtube_transcript_api")
+    from requests import Response, Session
+    from youtube_transcript_api._transcripts import Transcript, TranscriptList
+
+    response = Response()
+    response.status_code = 200
+    response._content = b"<transcript/>"
+    monkeypatch.setattr(Session, "get", lambda *args, **kwargs: response)
+    track = Transcript(
+        Session(), "video-1", "https://captions.example/text", "English", "en", request.param, []
+    )
+    transcript_list = TranscriptList(
+        "video-1",
+        {} if request.param else {"en": track},
+        {"en": track} if request.param else {},
+        [],
+    )
+    monkeypatch.setattr(api.YouTubeTranscriptApi, "list", lambda self, video_id: transcript_list)
+    return YouTubeTranscriptApiProvider()
+
+
+def test_given_empty_caption_when_wrapped_then_raises_provider_contract(empty_caption_provider):
+    with pytest.raises(TranscriptBlockedError, match="^provider_contract$"):
+        list(empty_caption_provider.list_tracks("video-1"))
+
+
+def test_given_empty_caption_when_enriching_then_blocks_without_retry(
+    session, empty_caption_provider
+):
+    _, state = _state(session)
+
+    result = run_transcript_enrichment(session, _adapter(), empty_caption_provider, now=_NOW)
+    session.refresh(state)
+
+    assert state.transcript_status == "blocked"
+    assert state.last_error_code == "provider_contract"
+    assert state.transcript_attempts == 0
+    assert state.transcript_next_attempt_at is None
+    assert result.transcript_blocked == 1
+    assert result.transcript_retries == 0
+    assert result.transcript_created == 0
+    assert session.query(FeedItem).count() == 1
+
+
+@pytest.mark.parametrize(
+    "error",
+    [
+        TranscriptBlockedError("provider_contract"),
+        TranscriptNotFoundError("not_found"),
+        TranscriptTransientError("provider_transient"),
+    ],
+)
+def test_given_first_party_error_when_wrapped_then_preserves_error(monkeypatch, error):
+    api = pytest.importorskip("youtube_transcript_api")
+
+    def fail(self, video_id):
+        raise error
+
+    monkeypatch.setattr(api.YouTubeTranscriptApi, "list", fail)
+    with pytest.raises(type(error)) as caught:
+        list(YouTubeTranscriptApiProvider().list_tracks("video-1"))
+    assert caught.value is error
