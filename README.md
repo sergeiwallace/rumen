@@ -3,12 +3,19 @@
 ![CI](https://github.com/sergeiwallace/rumen/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 
-Self-contained rumen engine for turning content feeds into a useful,
-ranked digest. It owns its SQLAlchemy storage and runs with SQLite or Postgres.
+Self-contained knowledge-curation and backlog-mining engine. Turn content feeds
+into ranked digests, then use that evidence to draft and curate enhancement work
+for your repositories. Explicit reviewer approval can promote proposals into
+[Beads](https://github.com/steveyegge/beads) tasks.
+
+rumen provides the knowledge-to-backlog layer of a self-improving repository
+workflow. It owns its SQLAlchemy storage and runs with SQLite or Postgres;
+implementation, testing and code review remain with your development workflow.
 
 ## Contents
 
 - [What it does](#what-it-does)
+- [From digests to enhancement tasks](#from-digests-to-enhancement-tasks)
 - [Roadmap](#roadmap)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
@@ -35,8 +42,10 @@ rumen processes configured sources through one pipeline:
 1. ingest content from source adapters;
 2. classify it and apply keyword tags;
 3. group items by stable identity and near-duplicate relationships;
-4. rank the resulting topic entities; and
-5. produce periodic digests.
+4. rank the resulting topic entities;
+5. produce periodic digests; and
+6. optionally mine that knowledge for evidence-backed enhancement proposals,
+   curate them against the existing backlog, and promote explicitly approved work.
 
 The engine includes adapters and configuration templates for browser bookmarks,
 GitHub, Hacker News, Hugging Face Daily Papers, npm, Reddit, RSS/Atom, YouTube,
@@ -47,31 +56,84 @@ The current interfaces are the CLI and Python APIs, including
 [tool functions](src/rumen/mcp_tools.py) that an external MCP host can expose.
 A web dashboard and an MCP host are not bundled.
 
+## From digests to enhancement tasks
+
+Use rumen to turn relevant releases, research, tools and techniques into proposed
+improvements to a repository, harness or workflow, including rumen itself. Mining
+combines ranked source evidence and available digest context with a configured
+target and task template. Relevance alone is not enough: the actionability judge
+must support a concrete proposal with evidence, or abstain.
+
+The implemented [backlog-mining subsystem](src/rumen/backlog_mining/) supports:
+
+| Capability | What it provides |
+| --- | --- |
+| Evidence-backed drafts | Source excerpts, URLs, digest context and recorded target/template identities, with structured validation and a separately executed evaluator before admission. |
+| Backlog curation | Freshness and duplicate gates, read-only open and closed task inventory, evidence accumulation for existing candidates, and explicit review of closed-task matches. |
+| Review and revision | Candidate lifecycle APIs for acceptance, edits, merging, deferral, rejection and knowledge-only retention; append-only disposition history and reversible candidate-state changes. |
+| Connected evidence | Source claims, configured context and model inferences shown separately, plus candidate-attributed evidence across proposals about the same topic entity. |
+| Explicit task promotion | CLI actions to create a task, relate new work to an existing task, group work under a shared epic, update selected work or change its status, with task links and operation receipts. |
+
+This supports a **self-improving repository feedback loop**: curate knowledge,
+propose enhancements, review and prioritize the work, implement it through your
+chosen human or coding-agent workflow, then let later mining consider the updated
+task inventory and newly ingested evidence. The engine supplies the evidence,
+review history and task handoff; it does not autonomously modify, test or merge
+repository code.
+
+Solid arrows below are implemented engine and task-store interactions. Dashed
+arrows are external development steps, not an autonomous execution service bundled
+with rumen.
+
+```mermaid
+flowchart TD
+    subgraph engine["rumen: curation and opt-in backlog mining"]
+        sources["Configured sources"] --> pipeline["Ingest, classify, group, rank"]
+        pipeline --> digests["Digests and saved views"]
+        pipeline --> mining["Evidence-backed candidate mining"]
+        digests --> mining
+        mining --> review["Candidate queue and review history"]
+        review -->|"Explicit reviewer action"| promotion["Create or update approved tasks"]
+        review -->|"Defer, reject or retain"| knowledge["No task promotion"]
+    end
+    promotion --> backlog["Beads backlog"]
+    backlog -->|"Read-only open and closed inventory"| mining
+    backlog -.-> development["Human or agent implementation, tests and review"]
+    development -.->|"Record task outcomes"| backlog
+```
+
+Mining and accepting a candidate do not by themselves write to Beads. Only an
+explicit promotion action crosses that boundary. A task classified as implemented
+keeps its content and completion status; further work must be a new task, which
+may be explicitly related or grouped under a shared epic. A disabled-by-default
+session projection can also return an approved
+task plan, but execution belongs to the invoking session.
+
+Post-pipeline mining is disabled by default (`backlog_mining_enabled: false`);
+`rumen backlog mine` is the explicit standalone entry point. Configure eligible
+sources, target/template mappings, a trusted actionability command and access to
+the intended Beads repository through `bd`. The bundled reader and promoter use
+that external CLI; a task-store identity is not automatic directory or remote-store
+routing. Unavailable or unsupported judging abstains, and mining failures are
+recorded separately without undoing completed curation. See the
+[backlog settings](docs/configuration.md#optional-backlog-controls),
+[review API](src/rumen/backlog_mining/review.py) and
+[promotion boundary](src/rumen/backlog_mining/promotion.py).
+
 ## Roadmap
 
 This is a loose view of current capabilities and proposed directions, not release
-commitments or dates. Priorities may change as the existing pipeline is evaluated.
+commitments or dates. Priorities may change as curation and candidate quality are
+evaluated.
 
 | Horizon | Focus | Scope |
 | --- | --- | --- |
 | Current | Core curation | Opt-in adapters, faceted classification, cross-source deduplication, personalized ranking, and periodic digests, with SQLite/Postgres storage, saved views, ratings, and classification corrections. |
-| Next (proposed) | Browsing and review | A web interface for saved views, digest reading, and feedback, plus a review workflow for possible duplicates, built on the existing filtering, correction, merge, and unmerge APIs. |
+| Current | Digest-to-backlog feedback | Evidence-backed candidate mining, existing-task checks, backlog review and revision, cross-candidate evidence, and explicit Beads promotion. Coding and deployment remain outside the engine. |
+| Next (proposed) | Browsing and review | A web interface for saved views, digest reading, candidate/backlog review and feedback, plus interactive duplicate review built on the existing filtering, correction, merge and unmerge APIs. |
 | Next (proposed) | Metadata sources | Opt-in security-advisory and scholarly-metadata adapters with stable identifiers, incremental updates, and documented access and reuse requirements. |
+| Later (exploratory) | Broader improvement-loop integrations | More convenient development-workflow handoffs and outcome feedback, evaluated against explicit quality and approval boundaries rather than assumed autonomous code changes. |
 | Later (exploratory) | Adaptive relevance | Multiple interest profiles and diagnostics for profile drift and digest diversity; evaluate feedback-driven classifier and deduplication tuning against explicit quality checks. |
-
-Solid arrows show the current capability flow; dashed arrows show proposed additions.
-
-```mermaid
-flowchart TD
-    subgraph current["Current engine"]
-        sources["Configured sources"] --> pipeline["Ingest, classify, group, rank"]
-        pipeline --> content["Digests and saved views"]
-        content --> interfaces["CLI and Python interfaces"]
-    end
-    metadata["Proposed: metadata adapters"] -.-> sources
-    content -.-> review["Proposed: browsing and review"]
-    adaptive["Later: adaptive relevance"] -.-> pipeline
-```
 
 ## Prerequisites
 
@@ -206,8 +268,15 @@ operations are `run` (ingest through ranking), `digest` (generate), and `feed`
 (`items`, `status`, `digest`, `rate`). `classify review` records human facet
 assignments and `classify metrics` shows telemetry. `fit-classifier` fits bundles;
 `taxonomy-audit` runs taxonomy maintenance. `reddit purge` is an explicit,
-confirmed deletion operation. Optional `backlog` operations require application
-integration for external task-store access and projection.
+confirmed deletion operation.
+
+`backlog mine` generates candidate drafts; `backlog list` and `backlog show` expose
+the queue and evidence; `backlog review` records an attributed reviewer action.
+Its explicit `--promote-as` options (`new`, `related`, `shared-epic`, `update`,
+`status`) can write to Beads through `bd`. These are not implied by mining or
+acceptance. Use `rumen backlog review --help` for the required actor, rationale,
+task selection and operation-specific safeguards. The Python APIs also expose
+candidate-family revision and undo/redo controls.
 
 `run --digest` generates a digest after processing; `--digest-period-days` selects
 the window. `digest --period-start` and `--period-end` accept explicit boundaries;
@@ -215,6 +284,11 @@ the window. `digest --period-start` and `--period-end` accept explicit boundarie
 requires a configured LLM command; `--local-polish` uses a matching local model.
 See [LLM configuration](docs/configuration.md) and the
 [extension contracts](docs/extending.md).
+
+When `backlog_mining_enabled` is true, `run` uses the combined refresh path:
+curation, optional digest generation, then candidate mining. Scheduling and
+operational notification delivery are integration choices; the job APIs expose
+separate mining results and alert status.
 
 ## Project layout
 
@@ -224,6 +298,7 @@ See [LLM configuration](docs/configuration.md) and the
 | [src/rumen/config.py](src/rumen/config.py) | JSON loader and adapter builder |
 | [src/rumen/adapters/base.py](src/rumen/adapters/base.py) | Normalized items and adapter protocols |
 | [src/rumen/jobs.py](src/rumen/jobs.py) | Pipeline orchestration |
+| [src/rumen/backlog_mining/](src/rumen/backlog_mining/) | Candidate mining, evidence, review history, read-only task inventory, explicit promotion and session-plan projection |
 | [src/rumen/models.py](src/rumen/models.py) | SQLAlchemy tables; see [data model](docs/data-model.md) |
 | [src/rumen/db/migrate.py](src/rumen/db/migrate.py) | Alembic migration runner; revisions live alongside it |
 | [src/rumen/embeddings.py](src/rumen/embeddings.py) | Embedding provider seam |
@@ -255,6 +330,12 @@ expectations and [environment](docs/environment.md) for test controls.
   explicitly configured local LLM command.
 - SQLite is suitable for local use; use Postgres for shared or production
   deployments.
+- Backlog mining is opt-in and requires target/template configuration, usable
+  evidence and task inventory, and a configured actionability backend. The built-in
+  task-store integration requires `bd` and the intended repository context.
+- There is no bundled autonomous coding, testing or merging loop. External
+  development workflows execute approved tasks; session projection returns a plan,
+  not a running agent or a completed change.
 
 ## Security
 
