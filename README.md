@@ -9,6 +9,7 @@ ranked digest. It owns its SQLAlchemy storage and runs with SQLite or Postgres.
 ## Contents
 
 - [What it does](#what-it-does)
+- [Roadmap](#roadmap)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Quick start: SQLite](#quick-start-sqlite)
@@ -41,6 +42,36 @@ The engine includes adapters and configuration templates for browser bookmarks,
 GitHub, Hacker News, Hugging Face Daily Papers, npm, Reddit, RSS/Atom, YouTube,
 and local cache-based sources. Sources are opt-in: the shipped example config has
 none enabled.
+
+The current interfaces are the CLI and Python APIs, including
+[tool functions](src/rumen/mcp_tools.py) that an external MCP host can expose.
+A web dashboard and an MCP host are not bundled.
+
+## Roadmap
+
+This is a loose view of current capabilities and proposed directions, not release
+commitments or dates. Priorities may change as the existing pipeline is evaluated.
+
+| Horizon | Focus | Scope |
+| --- | --- | --- |
+| Current | Core curation | Opt-in adapters, faceted classification, cross-source deduplication, personalized ranking, and periodic digests, with SQLite/Postgres storage, saved views, ratings, and classification corrections. |
+| Next (proposed) | Browsing and review | A web interface for saved views, digest reading, and feedback, plus a review workflow for possible duplicates, built on the existing filtering, correction, merge, and unmerge APIs. |
+| Next (proposed) | Metadata sources | Opt-in security-advisory and scholarly-metadata adapters with stable identifiers, incremental updates, and documented access and reuse requirements. |
+| Later (exploratory) | Adaptive relevance | Multiple interest profiles and diagnostics for profile drift and digest diversity; evaluate feedback-driven classifier and deduplication tuning against explicit quality checks. |
+
+Solid arrows show the current capability flow; dashed arrows show proposed additions.
+
+```mermaid
+flowchart TD
+    subgraph current["Current engine"]
+        sources["Configured sources"] --> pipeline["Ingest, classify, group, rank"]
+        pipeline --> content["Digests and saved views"]
+        content --> interfaces["CLI and Python interfaces"]
+    end
+    metadata["Proposed: metadata adapters"] -.-> sources
+    content -.-> review["Proposed: browsing and review"]
+    adaptive["Later: adaptive relevance"] -.-> pipeline
+```
 
 ## Prerequisites
 
