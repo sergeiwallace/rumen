@@ -195,9 +195,12 @@ materialize those entries. Use the [taxonomy API](extending.md#taxonomy).
 
 ## Optional backlog controls
 
-These generic engine settings are disabled by default. External task-store and
-session projection implementations must be supplied by the embedding application;
-the public CLI alone does not install those integrations.
+Post-pipeline mining and session-task projection are disabled by default. The
+engine includes a read-only Beads reader and explicit reviewer-driven promotion
+through the external `bd` CLI; configure and verify the intended task-store and
+repository context before using them. The bundled actionability judge also needs
+a configured trusted command backend. Session projection returns a gated plan;
+the invoking session, not rumen, executes that plan.
 
 | Key | Type | Default | Validation and purpose | Example |
 | --- | --- | --- | --- | --- |
@@ -217,5 +220,8 @@ the public CLI alone does not install those integrations.
 A target object has exactly three nonempty string fields: `beads_repo_identity`,
 `task_store`, `template_revision`. Identity and revision cannot contain `::`.
 A synthetic example is `{"beads_repo_identity":"example","task_store":"queue",
-"template_revision":"v1"}`. Do not enable this integration without implementing
-and testing the task-store boundary in your application.
+"template_revision":"v1"}`. These fields identify the target; they do not switch
+the working directory or route `bd` to another repository or remote store. Verify
+the external task-store context and permissions before enabling mining or invoking
+promotion. Custom task-store readers and notification delivery can be supplied by
+an embedding application.
