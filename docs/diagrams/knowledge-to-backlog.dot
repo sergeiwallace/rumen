@@ -1,0 +1,58 @@
+digraph knowledge_to_backlog {
+  graph [
+    rankdir=TB,
+    bgcolor="white",
+    pad="0.22",
+    nodesep="0.55",
+    ranksep="0.48",
+    splines=polyline,
+    outputorder=edgesfirst,
+    fontname="DejaVu Sans",
+    fontsize=18,
+    fontcolor="#172B4D",
+    label="Knowledge to a curated backlog",
+    labelloc=t,
+    labeljust=l
+  ];
+  node [
+    shape=box,
+    style="rounded,filled",
+    color="#64809B",
+    fillcolor="#EFF6FF",
+    fontcolor="#172B4D",
+    fontname="DejaVu Sans",
+    fontsize=16,
+    margin="0.16,0.12",
+    penwidth=1.4
+  ];
+  edge [
+    color="#53677E",
+    fontcolor="#34475E",
+    fontname="DejaVu Sans",
+    fontsize=13,
+    penwidth=1.5,
+    arrowsize=0.7
+  ];
+
+  curate [label="Curate sources\nIngest, classify,\ngroup and rank"];
+  digests [label="Digests and\nsaved views"];
+  mine [label="Mine candidates\nEvidence-backed,\nopt-in proposals"];
+  review [label="Review candidates\nQueue and history"];
+  hold [label="No task promotion\nDefer, reject or retain", fillcolor="#F5F6F8", color="#89939F"];
+  backlog [label="Beads backlog\nApproved work", fillcolor="#EAF7EE", color="#497B5A"];
+  develop [label="External development\nHuman or agent\nimplementation, tests\nand code review", fillcolor="#FFF6E8", color="#A16A24", style="rounded,filled,dashed"];
+
+  { rank=same; curate; digests; }
+  { rank=same; mine; review; }
+  { rank=same; hold; backlog; }
+
+  curate -> mine [weight=4];
+  curate -> digests [label="Optional digest"];
+  digests -> mine;
+  mine -> review;
+  review -> hold;
+  review -> backlog [label="Reviewer approval\nCreate or update", weight=4];
+  backlog:w -> mine:s [label="Read-only open /\nclosed inventory", constraint=false, color="#497B5A", fontcolor="#355B42"];
+  backlog:s -> develop:n [style=dashed, color="#A16A24"];
+  develop:e -> backlog:e [label="Record outcomes", style=dashed, color="#A16A24", fontcolor="#7B501B", constraint=false];
+}
