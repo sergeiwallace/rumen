@@ -85,22 +85,10 @@ Solid arrows below are implemented engine and task-store interactions. Dashed
 arrows are external development steps, not an autonomous execution service bundled
 with rumen.
 
-```mermaid
-flowchart TD
-    subgraph engine["rumen: curation and opt-in backlog mining"]
-        sources["Configured sources"] --> pipeline["Ingest, classify, group, rank"]
-        pipeline --> digests["Digests and saved views"]
-        pipeline --> mining["Evidence-backed candidate mining"]
-        digests --> mining
-        mining --> review["Candidate queue and review history"]
-        review -->|"Explicit reviewer action"| promotion["Create or update approved tasks"]
-        review -->|"Defer, reject or retain"| knowledge["No task promotion"]
-    end
-    promotion --> backlog["Beads backlog"]
-    backlog -->|"Read-only open and closed inventory"| mining
-    backlog -.-> development["Human or agent implementation, tests and review"]
-    development -.->|"Record task outcomes"| backlog
-```
+![Knowledge-to-backlog feedback loop: curated sources and optional digests feed candidate mining and review. Explicit reviewer approval promotes work to Beads; other dispositions do not. The backlog feeds read-only inventory into mining, while external development implements approved work and records outcomes.](docs/diagrams/knowledge-to-backlog.png)
+
+[Scalable diagram](docs/diagrams/knowledge-to-backlog.svg) ·
+[Editable source and regeneration](docs/diagrams/README.md)
 
 Mining and accepting a candidate do not by themselves write to Beads. Only an
 explicit promotion action crosses that boundary. A task classified as implemented
