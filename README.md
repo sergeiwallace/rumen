@@ -138,12 +138,12 @@ evaluated.
 ## Prerequisites
 
 - Python 3.11 or later
-- [uv](https://docs.astral.sh/uv/) (recommended) or pip
+- [uv](https://docs.astral.sh/uv/) (required)
 - A SQLite file for a local trial, or a reachable Postgres database
 
 ## Installation
 
-Clone the repository once, then choose an installation method. These commands
+Clone the repository once, then install with uv. These commands
 use a POSIX shell; on Windows use the virtual environment's activation command.
 
 ```bash
@@ -151,33 +151,23 @@ git clone https://github.com/sergeiwallace/rumen.git
 cd rumen
 ```
 
-With uv:
-
 ```bash
-uv venv
+uv sync
 source .venv/bin/activate
-uv pip install -e .
 rumen --help
 ```
 
-With Python's pip, in a fresh environment:
+`uv sync` creates `.venv` and installs the checkout in editable mode. Use
+`uv sync --no-editable` for a regular installation from the checkout.
+Install only the optional features you need. For the development checks, taxonomy
+APIs, RSS and Reddit support:
 
 ```bash
-python -m venv .venv-pip
-source .venv-pip/bin/activate
-python -m pip install -e .
-rumen --help
+uv sync --extra dev --extra taxonomy --extra feeds --extra reddit
 ```
 
-The editable install is for a checkout you can build on. Remove `-e` for a regular
-installation from the checkout. Install only the optional features you need.
-For the development checks, taxonomy APIs, RSS and Reddit support:
-
-```bash
-uv pip install -e '.[dev,taxonomy,feeds,reddit]'
-```
-
-The same extras syntax works with `python -m pip install` in the pip environment.
+`uv sync` makes the environment match the extras named, so name all wanted extras
+in one command.
 
 | Extra | Enables |
 | --- | --- |
@@ -204,7 +194,7 @@ contexts before importing.
 
 ## Quick start: SQLite
 
-After either installation method, run this from the repository root with its
+After installation, run this from the repository root with its
 virtual environment active. It creates an explicit local database and runs with
 no sources. CLI startup applies migrations. No credentials or LLM are needed.
 

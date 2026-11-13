@@ -62,7 +62,9 @@ class PrawRedditGateway:
         try:
             import praw
         except ImportError as exc:
-            raise RedditFetchError("Reddit support requires `pip install rumen[reddit]`") from exc
+            raise RedditFetchError(
+                "Reddit support requires the `reddit` extra: install with `uv sync --extra reddit` in a rumen checkout, or `uv add 'rumen[reddit]'` in a project that depends on rumen"
+            ) from exc
         try:
             self._reddit = praw.Reddit(
                 client_id=client_id,

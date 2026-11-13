@@ -34,6 +34,4 @@ jobs:
           RUMEN_DB_DSN: "sqlite:///${{ runner.temp }}/rumen-package-smoke.db"
         run: |
           uv build --out-dir dist
-          uv venv --python 3.11 "$RUNNER_TEMP/rumen-package-smoke"
-          uv pip install --python "$RUNNER_TEMP/rumen-package-smoke/bin/python" dist/*.whl
-          "$RUNNER_TEMP/rumen-package-smoke/bin/rumen" --help
+          uvx --python 3.11 --isolated --refresh-package rumen --from dist/*.whl rumen --help

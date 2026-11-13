@@ -37,22 +37,22 @@ embeddings = [
 ]
 # Standards-native SKOS/RDF taxonomy authoring, validation, and database materialization
 # (D-24). Kept optional so the base engine + OSS on-ramp remain light; install with
-# `pip install rumen[taxonomy]` when authoring or loading a taxonomy.
+# `uv sync --extra taxonomy` when authoring or loading a taxonomy.
 taxonomy = [
     "rdflib>=7.0",
     "skosify>=2.3",
 ]
 # Confident-learning quality gate for fitting the optional per-facet hierarchical
 # classifiers (T-17).  Kept opt-in so the base engine and OSS on-ramp remain light;
-# install with `pip install rumen[hmc-fit]` when fitting HMC artifacts.
+# install with `uv sync --extra hmc-fit` when fitting HMC artifacts.
 hmc-fit = [
     "cleanlab>=2.6",
 ]
 # Local-LLM path (design D-20). Discoverability marker only — it deliberately pulls NO
 # Python deps: a local LLM (Ollama/MLX) is a *system binary* that Rumen invokes through the
 # config `llm_command` / `llm_commands` subprocess seam (point it at e.g.
-# ["ollama", "run", "llama3.1"]), so there is nothing to pip-install. `pip install
-# rumen[local-llm]` therefore just documents the supported install target and
+# ["ollama", "run", "llama3.1"]), so there are no Python deps to install.
+# `uv sync --extra local-llm` therefore just documents the supported install target and
 # signals the seam; install the Ollama runtime separately (e.g. `brew install ollama`).
 # Enables the quota-free Tier-2 tier (D-3 ladder) + the optional abstractive digest polish
 # (D-21 step 3) with no hosted-LLM dependency.

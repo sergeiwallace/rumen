@@ -7,10 +7,12 @@ Thanks for your interest in contributing.
 ```bash
 git clone https://github.com/sergeiwallace/rumen.git
 cd rumen
-uv venv
+uv sync --extra dev
 source .venv/bin/activate
-uv pip install -e '.[dev]'
 ```
+
+`uv sync` makes the environment match the extras named, so name all wanted extras
+in one command.
 
 Set an explicit SQLite DSN before exercising commands that open storage:
 
