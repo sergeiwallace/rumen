@@ -8,6 +8,13 @@ documentation.
 
 ## [Unreleased]
 
+### Changed
+
+- The installation docs, the contributor guide, the CI package smoke test and the error messages
+  for missing optional extras use uv commands only (`uv sync`, `uv sync --extra`, `uv add`,
+  `uvx`). uv is a stated prerequisite.
+- Dependabot tracks the `uv` package ecosystem.
+
 ## [0.1.0]
 
 ### Added

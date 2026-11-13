@@ -33,7 +33,9 @@ def require_feedparser() -> None:
     try:
         import feedparser  # noqa: F401
     except ImportError as exc:
-        raise RuntimeError("RSS/Atom support requires `pip install rumen[feeds]`") from exc
+        raise RuntimeError(
+            "RSS/Atom support requires the `feeds` extra: run `uv sync --extra feeds` in a rumen checkout, or `uv add 'rumen[feeds]'` in a project that depends on rumen"
+        ) from exc
 
 
 @dataclass(slots=True)
