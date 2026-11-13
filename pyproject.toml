@@ -46,7 +46,7 @@ taxonomy = [
 # classifiers (T-17).  Kept opt-in so the base engine and OSS on-ramp remain light;
 # install with `uv sync --extra hmc-fit` when fitting HMC artifacts.
 hmc-fit = [
-    "cleanlab>=2.6",
+    "cleanlab>=2.9.0",
 ]
 # Local-LLM path (design D-20). Discoverability marker only — it deliberately pulls NO
 # Python deps: a local LLM (Ollama/MLX) is a *system binary* that Rumen invokes through the
