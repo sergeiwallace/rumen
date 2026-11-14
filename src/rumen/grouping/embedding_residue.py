@@ -11,17 +11,15 @@ from __future__ import annotations
 from datetime import UTC, datetime, timedelta
 
 import numpy as np
-from sqlalchemy import delete, select, update
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from rumen.embeddings import decode_embedding
 from rumen.grouping.merge import attach_item
+from rumen.grouping.references import repoint_entity_references
 from rumen.models import (
-    DigestEntity,
-    FeedFeedback,
     FeedItem,
     MergeCandidate,
-    MergeLog,
     TopicEntity,
     topic_entity_not_fully_source_deleted,
 )
@@ -140,47 +138,7 @@ def cluster_residue(
                     confidence=sim,
                     evidence={"cosine": sim},
                 )
-            # Repoint the absorbed entity's audit history to the survivor, then drop it
-            # (the FK from merge_log/merge_candidates would otherwise block the delete).
-            session.execute(
-                update(MergeLog)
-                .where(MergeLog.topic_entity_id == b_id)
-                .values(topic_entity_id=a_id)
-            )
-            session.execute(
-                delete(MergeCandidate).where(
-                    (MergeCandidate.entity_a_id == b_id) | (MergeCandidate.entity_b_id == b_id)
-                )
-            )
-            # Preserve past digest membership while freeing the absorbed entity for deletion.
-            # A digest may already contain the survivor, so consolidate that duplicate membership
-            # rather than violating uq_digest_entities; keep the better historical position.
-            for membership in list(
-                session.scalars(select(DigestEntity).where(DigestEntity.topic_entity_id == b_id))
-            ):
-                survivor_membership = session.scalar(
-                    select(DigestEntity).where(
-                        DigestEntity.digest_id == membership.digest_id,
-                        DigestEntity.topic_entity_id == a_id,
-                    )
-                )
-                if survivor_membership is None:
-                    membership.topic_entity_id = a_id
-                else:
-                    if membership.rank is not None and (
-                        survivor_membership.rank is None
-                        or membership.rank < survivor_membership.rank
-                    ):
-                        survivor_membership.rank = membership.rank
-                    session.delete(membership)
-            # Repoint past user feedback -- no unique constraint on topic_entity_id,
-            # so unlike digest membership there is no collision case to consolidate.
-            session.execute(
-                update(FeedFeedback)
-                .where(FeedFeedback.topic_entity_id == b_id)
-                .values(topic_entity_id=a_id)
-            )
-            session.flush()
+            repoint_entity_references(session, keep, drop)
             merged_away.add(b_id)
             session.delete(drop)
             session.flush()

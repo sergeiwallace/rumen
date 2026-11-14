@@ -19,7 +19,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: uv sync --extra dev --extra taxonomy --extra feeds --extra youtube-transcripts
+        run: uv sync --locked --extra dev --extra taxonomy --extra feeds --extra youtube-transcripts
 
       - name: Lint
         run: uv run ruff check src/ tests/

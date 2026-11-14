@@ -34,6 +34,12 @@ SQLite needs no server. Postgres uses psycopg3; bare `postgresql://` and
 | `sources[].type` | string | required | One of the 16 types in the [README](../README.md#adapters). | `"rss_atom"` |
 | `sources[].host` | string or null | `null` | Optional exact match against `AI_HOST`; absent/null applies everywhere. Nonmatching entries are skipped before adapter validation. | `"workstation"` |
 
+Host pins match `AI_HOST` exactly. A mismatch, including an unset or empty
+`AI_HOST`, skips the pinned source; unpinned sources still apply everywhere.
+Each skip emits a WARNING naming the source type, pin and current host, and
+`rumen run` includes `skipped_for_host` in its result JSON as a list of
+`{"type":"hf_daily_papers","host":"old-host"}` entries (or `[]` when none).
+
 There is no universal `enabled` flag. Only `chrome_reading_list` and
 `reddit_subreddits` support it, and require an explicit boolean. Their shipped
 `false` templates need no other fields. Other sources are enabled by adding them
