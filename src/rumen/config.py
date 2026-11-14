@@ -8,6 +8,7 @@ specifics (paths, package lists) — those live in the operator's config file.
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 import tempfile
@@ -42,6 +43,8 @@ from rumen.chrome_reading_list import (
 )
 from rumen.llm import FallbackLlmCommand, LlmCommand, SubprocessLlmCommand
 from rumen.source_maintenance import SourceMaintainer
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True, slots=True)
@@ -159,6 +162,7 @@ class PipelineConfig:
     backlog_max_age_days: int = 30
     backlog_max_rank_position: int = 20
     config_path: Path | None = None
+    skipped_for_host: list[dict] = field(default_factory=list)
 
 
 def _target_template(value: object, *, field_name: str) -> TargetTemplate:
@@ -957,9 +961,19 @@ def load_config(path: str | Path) -> PipelineConfig:
         actionability_data["llm_commands"] = data["actionability_llm_commands"]
     elif "actionability_llm_command" in data:
         actionability_data["llm_command"] = data["actionability_llm_command"]
-    applicable_sources = [
-        spec for spec in data.get("sources", []) if _source_applies_to_host(spec, ai_host)
-    ]
+    applicable_sources = []
+    skipped_for_host = []
+    for spec in data.get("sources", []):
+        if _source_applies_to_host(spec, ai_host):
+            applicable_sources.append(spec)
+        else:
+            skipped_for_host.append({"type": spec.get("type"), "host": spec.get("host")})
+            logger.warning(
+                "Skipping source type=%r pinned to host=%r: current AI_HOST=%r",
+                spec.get("type"),
+                spec.get("host"),
+                ai_host,
+            )
     chrome_reading_list_sources = [
         source
         for spec in applicable_sources
@@ -987,6 +1001,7 @@ def load_config(path: str | Path) -> PipelineConfig:
     return PipelineConfig(
         database=database,
         storage=storage,
+        skipped_for_host=skipped_for_host,
         adapters=[
             *[
                 _build_adapter(spec)

@@ -3,15 +3,94 @@
 from __future__ import annotations
 
 import json
+import logging
 from datetime import UTC, datetime
 from unittest.mock import Mock
 
 import pytest
 
 from rumen.cli import run
+from rumen.config import load_config
 from rumen.models import Digest, FeedItem, FeedView, SourceMaintenanceRun
 
 _NOW = datetime(2026, 7, 10, tzinfo=UTC)
+
+
+@pytest.fixture
+def host_pinned_config(tmp_path):
+    bookmarks = tmp_path / "Bookmarks"
+    bookmarks.write_text(json.dumps({"roots": {}}))
+    config = tmp_path / "rumen.json"
+    config.write_text(
+        json.dumps(
+            {
+                "classifier_escalation_alarm_threshold": 0.25,
+                "sources": [
+                    {
+                        "type": "chrome_bookmarks",
+                        "bookmarks_path": str(bookmarks),
+                        "profile": "Default",
+                    },
+                    {"type": "hf_daily_papers", "host": "old-host"},
+                ],
+            }
+        )
+    )
+    return config
+
+
+@pytest.mark.parametrize("ai_host", ["new-host", None, "", "OLD-HOST", "old-host"])
+def test_given_host_pinned_source_when_loading_config_then_reports_only_mismatches(
+    host_pinned_config, monkeypatch, caplog, ai_host
+):
+    if ai_host is None:
+        monkeypatch.delenv("AI_HOST", raising=False)
+    else:
+        monkeypatch.setenv("AI_HOST", ai_host)
+
+    with caplog.at_level(logging.WARNING, logger="rumen.config"):
+        config = load_config(host_pinned_config)
+
+    skipped = ai_host != "old-host"
+    assert [adapter.source_name() for adapter in config.adapters] == (
+        ["chrome_bookmarks:Default"] if skipped else ["chrome_bookmarks:Default", "hf_daily"]
+    )
+    assert config.skipped_for_host == (
+        [{"type": "hf_daily_papers", "host": "old-host"}] if skipped else []
+    )
+    records = [record for record in caplog.records if record.name == "rumen.config"]
+    assert len(records) == int(skipped)
+    if skipped:
+        assert records[0].levelno == logging.WARNING
+        assert "hf_daily_papers" in records[0].getMessage()
+        assert "old-host" in records[0].getMessage()
+        assert repr(ai_host or None) in records[0].getMessage()
+
+
+@pytest.mark.parametrize("ai_host", ["new-host", None, ""])
+@pytest.mark.parametrize("entrypoint", ["run", "main"])
+def test_given_host_mismatch_when_running_then_json_and_one_warning_report_skip(
+    session, host_pinned_config, monkeypatch, caplog, capsys, ai_host, entrypoint
+):
+    from rumen.cli import main
+
+    if ai_host is None:
+        monkeypatch.delenv("AI_HOST", raising=False)
+    else:
+        monkeypatch.setenv("AI_HOST", ai_host)
+    argv = ["run", "--config", str(host_pinned_config)]
+
+    with caplog.at_level(logging.WARNING, logger="rumen.config"):
+        code = run(argv, session) if entrypoint == "run" else main(argv)
+
+    payload = json.loads(capsys.readouterr().out)
+    assert code == 0
+    assert payload["ok"] is True
+    assert payload["ingested"] == {"chrome_bookmarks:Default": 0}
+    assert payload["skipped_for_host"] == [{"type": "hf_daily_papers", "host": "old-host"}]
+    records = [record for record in caplog.records if record.name == "rumen.config"]
+    assert len(records) == 1
+    assert records[0].levelno == logging.WARNING
 
 
 def _seed(session) -> None:
@@ -96,6 +175,7 @@ def test_cli_run_with_digest_flag_is_end_to_end(session, capsys, tmp_path) -> No
     )
     code = run(["run", "--config", str(cfg), "--digest"], session)
     assert code == 0
+    assert json.loads(capsys.readouterr().out.splitlines()[0])["skipped_for_host"] == []
     assert session.query(Digest).count() == 1  # the refresh produced a digest end-to-end
 
 

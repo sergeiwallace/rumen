@@ -11,6 +11,7 @@ import os
 import sys
 from collections.abc import Callable
 from datetime import UTC, datetime, timedelta
+from typing import TYPE_CHECKING
 
 from sqlalchemy.orm import Session
 
@@ -22,6 +23,9 @@ from rumen.mcp_tools import (
 )
 from rumen.taxonomy.corrections import record_classification_review
 from rumen.views import UnknownViewError, stale_facet_concept_ids
+
+if TYPE_CHECKING:
+    from rumen.config import PipelineConfig
 
 NotificationChannelResolver = Callable[[], tuple[NotificationChannel | None, BaseException | None]]
 
@@ -197,10 +201,16 @@ def _run_parsed(
     args: argparse.Namespace,
     session: Session,
     *,
+    config: PipelineConfig | None = None,
     notification_channel_resolver: NotificationChannelResolver | None = None,
 ) -> int:
     if args.group == "run":
-        return _cmd_run(args, session, notification_channel_resolver=notification_channel_resolver)
+        return _cmd_run(
+            args,
+            session,
+            config=config,
+            notification_channel_resolver=notification_channel_resolver,
+        )
     if args.group == "digest":
         return _cmd_digest(args, session)
     if args.group == "fit-classifier":
@@ -375,6 +385,7 @@ def _cmd_run(
     args,
     session: Session,
     *,
+    config: PipelineConfig | None = None,
     notification_channel_resolver: NotificationChannelResolver | None = None,
 ) -> int:
     from rumen.config import load_config
@@ -383,7 +394,7 @@ def _cmd_run(
     if not args.config:
         print("error: --config (or RUMEN_CONFIG) is required for `rumen run`", file=sys.stderr)
         return 1
-    cfg = load_config(args.config)
+    cfg = config if config is not None else load_config(args.config)
     reports = None
     if cfg.classifier_path:
         from rumen.classifier.fit import load_classifier
@@ -449,6 +460,7 @@ def _cmd_run(
         json.dumps(
             {
                 "ingested": {r.source: r.items_passed_filter for r in result.ingest_runs},
+                "skipped_for_host": cfg.skipped_for_host,
                 "classified": result.classified,
                 "grouped": result.grouped,
                 "ranked": result.ranked_count,
@@ -852,6 +864,7 @@ def main(
         return _run_parsed(
             args,
             session,
+            config=config,
             notification_channel_resolver=notification_channel_resolver,
         )
 

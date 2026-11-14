@@ -64,7 +64,7 @@ combines ranked source evidence and available digest context with a configured
 target and task template. Relevance alone is not enough: the actionability judge
 must support a concrete proposal with evidence, or abstain.
 
-The implemented [backlog-mining subsystem](src/rumen/backlog_mining/) supports:
+The implemented [backlog-mining subsystem](src/rumen/backlog_mining/__init__.py) supports:
 
 | Capability | What it provides |
 | --- | --- |
@@ -152,18 +152,18 @@ cd rumen
 ```
 
 ```bash
-uv sync
+uv sync --locked
 source .venv/bin/activate
 rumen --help
 ```
 
-`uv sync` creates `.venv` and installs the checkout in editable mode. Use
-`uv sync --no-editable` for a regular installation from the checkout.
+`uv sync --locked` creates `.venv` and installs the checkout in editable mode. Use
+`uv sync --locked --no-editable` for a regular installation from the checkout.
 Install only the optional features you need. For the development checks, taxonomy
 APIs, RSS and Reddit support:
 
 ```bash
-uv sync --extra dev --extra taxonomy --extra feeds --extra reddit
+uv sync --locked --extra dev --extra taxonomy --extra feeds --extra reddit
 ```
 
 `uv sync` makes the environment match the extras named, so name all wanted extras
@@ -288,7 +288,7 @@ separate mining results and alert status.
 | [src/rumen/config.py](src/rumen/config.py) | JSON loader and adapter builder |
 | [src/rumen/adapters/base.py](src/rumen/adapters/base.py) | Normalized items and adapter protocols |
 | [src/rumen/jobs.py](src/rumen/jobs.py) | Pipeline orchestration |
-| [src/rumen/backlog_mining/](src/rumen/backlog_mining/) | Candidate mining, evidence, review history, read-only task inventory, explicit promotion and session-plan projection |
+| [src/rumen/backlog_mining/](src/rumen/backlog_mining/__init__.py) | Candidate mining, evidence, review history, read-only task inventory, explicit promotion and session-plan projection |
 | [src/rumen/models.py](src/rumen/models.py) | SQLAlchemy tables; see [data model](docs/data-model.md) |
 | [src/rumen/db/migrate.py](src/rumen/db/migrate.py) | Alembic migration runner; revisions live alongside it |
 | [src/rumen/embeddings.py](src/rumen/embeddings.py) | Embedding provider seam |

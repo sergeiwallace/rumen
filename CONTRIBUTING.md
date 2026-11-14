@@ -7,7 +7,7 @@ Thanks for your interest in contributing.
 ```bash
 git clone https://github.com/sergeiwallace/rumen.git
 cd rumen
-uv sync --extra dev
+uv sync --locked --extra dev
 source .venv/bin/activate
 ```
 

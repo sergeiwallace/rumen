@@ -19,6 +19,7 @@ Fetcher = Callable[[str], str]
 
 _DAILY_PAPERS_URL = "https://huggingface.co/api/daily_papers"
 _PAGE_LIMIT = 100
+_MAX_PAGES_PER_DAY = 20
 _ARXIV_ID_RE = re.compile(r"^\d{4}\.\d{4,5}(?:v\d+)?$")
 
 
@@ -52,8 +53,8 @@ class HfDailyPapersAdapter:
     def source_name(self) -> str:
         return "hf_daily"
 
-    def day_url(self, day: date) -> str:
-        params = urllib.parse.urlencode({"date": day.isoformat(), "limit": _PAGE_LIMIT, "p": 0})
+    def day_url(self, day: date, page: int = 0) -> str:
+        params = urllib.parse.urlencode({"date": day.isoformat(), "limit": _PAGE_LIMIT, "p": page})
         return f"{_DAILY_PAPERS_URL}?{params}"
 
     def fetch_new(self, since: datetime | None) -> list[RawItem]:
@@ -76,25 +77,27 @@ class HfDailyPapersAdapter:
         return items
 
     def _fetch_day(self, day: date) -> list[RawItem]:
-        payload = json.loads(self._fetcher(self.day_url(day)))
-        if not isinstance(payload, list):
-            raise HfDailyPapersFetchError(f"Hugging Face day {day} returned a non-list envelope")
-        if len(payload) == _PAGE_LIMIT:
-            raise HfDailyPapersFetchError(
-                f"Hugging Face day {day} returned {_PAGE_LIMIT} items; refusing to paginate"
-            )
-
         items: list[RawItem] = []
         day_ids: set[str] = set()
-        for entry in payload:
-            item = self._map_entry(entry, day)
-            if item.source_id in day_ids:
+        for page in range(_MAX_PAGES_PER_DAY):
+            payload = json.loads(self._fetcher(self.day_url(day, page)))
+            if not isinstance(payload, list):
                 raise HfDailyPapersFetchError(
-                    f"Hugging Face day {day} contains repeated paper id {item.source_id!r}"
+                    f"Hugging Face day {day} returned a non-list envelope"
                 )
-            day_ids.add(item.source_id)
-            items.append(item)
-        return items
+            for entry in payload:
+                item = self._map_entry(entry, day)
+                if item.source_id in day_ids:
+                    raise HfDailyPapersFetchError(
+                        f"Hugging Face day {day} contains repeated paper id {item.source_id!r}"
+                    )
+                day_ids.add(item.source_id)
+                items.append(item)
+            if len(payload) < _PAGE_LIMIT:
+                return items
+        raise HfDailyPapersFetchError(
+            f"Hugging Face day {day} reached {_MAX_PAGES_PER_DAY} pages without a short page"
+        )
 
     def _map_entry(self, entry: object, requested_day: date) -> RawItem:
         if not isinstance(entry, dict):
