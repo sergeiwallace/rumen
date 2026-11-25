@@ -33,7 +33,7 @@ dev = [
 # kept optional so the engine + OSS on-ramp install stay light; the zero-dep
 # HashingEmbeddingProvider is the default until this is installed + configured.
 embeddings = [
-    "sentence-transformers>=3.0",
+    "sentence-transformers>=6.2.0",
 ]
 # Standards-native SKOS/RDF taxonomy authoring, validation, and database materialization
 # (D-24). Kept optional so the base engine + OSS on-ramp remain light; install with
