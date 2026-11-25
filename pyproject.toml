@@ -39,7 +39,7 @@ embeddings = [
 # (D-24). Kept optional so the base engine + OSS on-ramp remain light; install with
 # `uv sync --extra taxonomy` when authoring or loading a taxonomy.
 taxonomy = [
-    "rdflib>=7.0",
+    "rdflib>=7.6.0",
     "skosify>=2.3",
 ]
 # Confident-learning quality gate for fitting the optional per-facet hierarchical
